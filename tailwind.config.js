@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./route-home.html", "./routes/*.html"],
+  content: ["./public/route-home.html", "./public/routes/*.html"],
   theme: {
     extend: {},
   },
