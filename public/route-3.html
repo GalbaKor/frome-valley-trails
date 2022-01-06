@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css" class="rel" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col">
+      <!-- Navigation bar -->
+      <div class="bg-green-500" x-data="{ hideMob: true }">
+        <nav
+          class="flex items-center justify-between flex-wrap px-2 lg:p-2 m-auto"
+          style="max-width: 1200px"
+        >
+          <a class="flex items-center flex-shrink-0 text-white mr-6" href="/">
+            <img
+              src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/weg_logo.png"
+              class="h-16 lg:h-20"
+              alt="Winterbourne and Frome Valley Environmental Group Logo"
+            />
+          </a>
+          <div class="block lg:hidden">
+            <button
+              class="flex items-center px-3 py-2 border rounded text-green-100 border-green-500 hover:text-white hover:border-white"
+              @click="hideMob = !hideMob"
+            >
+              <svg
+                class="fill-current h-6 w-6"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="pl-2 lg:pl-0 w-full block lg:flex-grow lg:flex lg:items-center lg:w-auto transition-all duration-500 ease-in-out overflow-hidden lg:max-h-80 max-h-0"
+            :class="{ 'max-h-0': hideMob, 'max-h-80': !hideMob }"
+          >
+            <div class="text-sm lg:flex-grow">
+              <a
+                href="https://winterbourne-environmental.uk/about-us"
+                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-green-100 hover:text-white mr-4"
+              >
+                About Us
+              </a>
+              <a
+                href="https://winterbourne-environmental.uk/blog"
+                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-green-100 hover:text-white mr-4"
+              >
+                Blog
+              </a>
+              <a
+                href="https://winterbourne-environmental.uk/events_list"
+                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-green-100 hover:text-white mr-4"
+              >
+                Events
+              </a>
+              <a
+                href="https://winterbourne-environmental.uk/walks"
+                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-green-100 hover:text-white mr-4"
+              >
+                Walks
+              </a>
+              <a
+                href="https://winterbourne-environmental.uk/projects"
+                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-green-100 hover:text-white mr-4"
+              >
+                Projects
+              </a>
+              <a
+                href="https://winterbourne-environmental.uk/links"
+                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-green-100 hover:text-white mr-4"
+              >
+                Links
+              </a>
+            </div>
+            <div class="pb-3 lg:pb-0">
+              <a
+                href="/contact-us"
+                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-green-500 hover:bg-white mt-4 lg:mt-0"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Header photo - currently a placeholder -->
+
+      <!-- Main content begins -->
+      <main
+        role="main"
+        class="container mx-auto pt-8 flex-grow"
+        style="max-width: 1200px"
+      >
+        <!-- Page title "Local Walks" -->
+        <a href="./routes.html">
+          <h1
+            class="text-2xl underline text-gray-600 text-opacity-70 text-left inline-flex pb-8"
+          >
+            <- Back to Routes
+          </h1>
+        </a>
+        <h1 class="text-4xl font-bold w-full text-center pb-8">Route 3</h1>
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1WyZy-LVaXdsGLXteW5HgMTFDcUqmhMUc&ehbc=2E312F"
+          height="360"
+          class="mx-auto w-full"
+        ></iframe>
+        <!-- Intro text -->
+        <hr class="py-4" />
+        <div class="flex flex-wrap mx-auto justify-center pb-8 lg:py-4">
+          <div class="w-full lg:w-1/2 p-4 text-xl text-center bg-green-200">
+            <table class="table-fixed w-full">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <td>Category</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <th>Distance</th>
+                  <td>Insert distance</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <th>Difficulty</th>
+                  <td>Easy</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr>
+                  <th>Start at</th>
+                  <td>Lorem, ipsum.</td>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+
+        <!-- Dropdown "How does it work" button -->
+        <div class="md:m-10 text-center">
+          <button
+            class="bg-green-500 px-4 py-6 rounded container text-white text-2xl"
+            id="menu-btn"
+          >
+            How does it work?
+          </button>
+          <div
+            class="bg-gray-200 hidden flex-col rounded mt-1 p-2 text-sm"
+            id="dropdown"
+          >
+            <ol class="text-center text-base">
+              <li class="pb-2">1. Choose the trail that you like</li>
+              <li class="pb-2">
+                2. Start the trail by clicking the button on its page
+              </li>
+              <li class="pb-2">
+                3. Scan the QR codes along the way to learn more about the area
+              </li>
+              <li class="pb-2">
+                4. Answer a quiz question at the end of the info page to earn a
+                sticker
+              </li>
+              <li class="pb-4">5. Enjoy your walk!</li>
+            </ol>
+            <p class="text-center text-base">
+              If you do not want to scan the QR codes, you can still access the
+              information about each <br />route point by opening the drop down
+              menu "Route Points" on the trail's page.
+
+              <br /><br />
+
+              You can also read the written directions by opening them with the
+              "Route Directions" button.
+            </p>
+          </div>
+        </div>
+
+        <!-- Route pages -->
+        <div class="b-4">
+          <div class="w-full p-4 text-center">
+            <div>
+              <ul class="">
+                <!-- Route 1 -->
+                <li class="w-full pb-4 sm:p-8">
+                  <div class="bg-green-200 rounded-md w-full">
+                    <div class="flex flex-wrap">
+                      <div class="flex-auto p-4 md:p-4">
+                        <h3 class="font-bold">
+                          <!-- <a href="route-1.html">Point 1</a> -->
+                          <h3 class="font-bold">Point 1</h3>
+                        </h3>
+                        <p class="info text-sm pb-2">
+                          Distance travelled - x miles
+                        </p>
+                        <ol>
+                          <li>1. Lorem ipsum dolor sit amet.</li>
+                          <li>2. Lorem ipsum dolor sit amet.</li>
+                          <li>3. Lorem ipsum dolor sit amet.</li>
+                          <li>4. Lorem ipsum dolor sit amet.</li>
+                          <li>5. Lorem ipsum dolor sit amet.</li>
+                        </ol>
+                        <!-- <p class="excerpt text-center">
+                          Lorem ipsum, dolor sit amet consectetur adipisicing
+                          elit. Aspernatur atque itaque eius minus dolorem
+                          quibusdam nam, blanditiis amet neque error,
+                          repellendus nemo tenetur rerum tempore, ipsam
+                          molestiae molestias distinctio totam.
+                        </p> -->
+                      </div>
+                      <!-- Modal/lightbox button container -->
+                      <!-- Uses Alpine JS for inline JS -->
+                      <div
+                        class="flex-auto bg-no-repeat bg-cover"
+                        style="
+                          background-image: url('https://via.placeholder.com/150');
+                        "
+                        x-data="{open: false}"
+                      >
+                        <!-- Open button -->
+                        <button
+                          x-on:click.prevent="open = true"
+                          class="p-12 h-full flex items-center justify-center w-full"
+                        >
+                          Explore point information
+                        </button>
+
+                        <!-- Lightbox information container -->
+                        <div
+                          x-show.transition.opacity="open"
+                          x-on:click.away="open = false"
+                          class="p-4 fixed flex justify-center items-center inset-0 bg-black bg-opacity-75 z-50"
+                        >
+                          <div
+                            x-show.transition="open"
+                            class="container max-w-3xl max-h-full bg-white rounded-xl shadow-lg overflow-auto"
+                          >
+                            <!-- Location title -->
+                            <div class="px-8 py-4 border-b border-black">
+                              <h2 class="font-bold">Location Title</h2>
+                            </div>
+                            <!-- Information -->
+                            <div class="px-8 py-4">
+                              <p class="pb-4">
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Et labore ipsum ipsam aliquam
+                                ab ratione veniam maxime, sed iste quas nisi
+                                voluptatibus dolorum pariatur aliquid ad
+                                provident exercitationem enim excepturi!
+                              </p>
+                              <p>
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Et labore ipsum ipsam aliquam
+                                ab ratione veniam maxime, sed iste quas nisi
+                                voluptatibus dolorum pariatur aliquid ad
+                                provident exercitationem enim excepturi!
+                              </p>
+                            </div>
+                            <!-- Close button -->
+                            <div
+                              class="px-8 py-4 border-t border-black text-center"
+                            >
+                              <button
+                                x-on:click.prevent="open = false"
+                                class="py-2 px-4 rounded-full text-center inline-block border border-black text-black bg-white hover:bg-black hover:text-white focus:outline-none"
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- Route 2 -->
+                <li class="w-full pb-4 sm:p-8">
+                  <button
+                    class="bg-green-200 rounded-md w-full"
+                    onclick="window.location.href='route-1.html';"
+                  >
+                    <div class="flex flex-wrap">
+                      <div class="flex-auto p-4 md:p-4">
+                        <h3 class="font-bold">
+                          <a href="route-1.html">Point 2</a>
+                        </h3>
+                        <p class="info text-sm pb-2">
+                          Distance travelled - x miles
+                        </p>
+                        <ol>
+                          <li>1. Lorem ipsum dolor sit amet.</li>
+                          <li>2. Lorem ipsum dolor sit amet.</li>
+                          <li>3. Lorem ipsum dolor sit amet.</li>
+                          <li>4. Lorem ipsum dolor sit amet.</li>
+                          <li>5. Lorem ipsum dolor sit amet.</li>
+                        </ol>
+                        <!-- <p class="excerpt text-center">
+                          Lorem ipsum, dolor sit amet consectetur adipisicing
+                          elit. Aspernatur atque itaque eius minus dolorem
+                          quibusdam nam, blanditiis amet neque error,
+                          repellendus nemo tenetur rerum tempore, ipsam
+                          molestiae molestias distinctio totam.
+                        </p> -->
+                      </div>
+                      <div
+                        class="flex-auto bg-no-repeat bg-cover"
+                        style="
+                          background-image: url('https://via.placeholder.com/150');
+                        "
+                      >
+                        <a class="" href="route-1.html"
+                          ><h3
+                            class="p-12 h-full flex items-center justify-center"
+                          >
+                            Explore point information
+                          </h3></a
+                        >
+                      </div>
+                    </div>
+                  </button>
+                </li>
+                <!-- Route 3 -->
+                <li class="w-full pb-4 sm:p-8">
+                  <button
+                    class="bg-green-200 rounded-md w-full"
+                    onclick="window.location.href='route-1.html';"
+                  >
+                    <div class="flex flex-wrap">
+                      <div class="flex-auto p-4 md:p-4">
+                        <h3 class="font-bold">
+                          <a href="route-1.html">Point 3</a>
+                        </h3>
+                        <p class="info text-sm pb-2">
+                          Distance travelled - x miles
+                        </p>
+                        <ol>
+                          <li>1. Lorem ipsum dolor sit amet.</li>
+                          <li>2. Lorem ipsum dolor sit amet.</li>
+                          <li>3. Lorem ipsum dolor sit amet.</li>
+                          <li>4. Lorem ipsum dolor sit amet.</li>
+                          <li>5. Lorem ipsum dolor sit amet.</li>
+                        </ol>
+                        <!-- <p class="excerpt text-center">
+                          Lorem ipsum, dolor sit amet consectetur adipisicing
+                          elit. Aspernatur atque itaque eius minus dolorem
+                          quibusdam nam, blanditiis amet neque error,
+                          repellendus nemo tenetur rerum tempore, ipsam
+                          molestiae molestias distinctio totam.
+                        </p> -->
+                      </div>
+                      <div
+                        class="flex-auto bg-no-repeat bg-cover"
+                        style="
+                          background-image: url('https://via.placeholder.com/150');
+                        "
+                      >
+                        <a class="" href="route-1.html"
+                          ><h3
+                            class="p-12 h-full flex items-center justify-center"
+                          >
+                            Explore point information
+                          </h3></a
+                        >
+                      </div>
+                    </div>
+                  </button>
+                </li>
+                <!-- Route 4 -->
+                <li class="w-full pb-4 sm:p-8">
+                  <button
+                    class="bg-green-200 rounded-md w-full"
+                    onclick="window.location.href='route-1.html';"
+                  >
+                    <div class="flex flex-wrap">
+                      <div class="flex-auto p-4 md:p-4">
+                        <h3 class="font-bold">
+                          <a href="route-1.html">Point 4</a>
+                        </h3>
+                        <p class="info text-sm pb-2">
+                          Distance travelled - x miles
+                        </p>
+                        <ol>
+                          <li>1. Lorem ipsum dolor sit amet.</li>
+                          <li>2. Lorem ipsum dolor sit amet.</li>
+                          <li>3. Lorem ipsum dolor sit amet.</li>
+                          <li>4. Lorem ipsum dolor sit amet.</li>
+                          <li>5. Lorem ipsum dolor sit amet.</li>
+                        </ol>
+                        <!-- <p class="excerpt text-center">
+                          Lorem ipsum, dolor sit amet consectetur adipisicing
+                          elit. Aspernatur atque itaque eius minus dolorem
+                          quibusdam nam, blanditiis amet neque error,
+                          repellendus nemo tenetur rerum tempore, ipsam
+                          molestiae molestias distinctio totam.
+                        </p> -->
+                      </div>
+                      <div
+                        class="flex-auto bg-no-repeat bg-cover"
+                        style="
+                          background-image: url('https://via.placeholder.com/150');
+                        "
+                      >
+                        <a class="" href="route-1.html"
+                          ><h3
+                            class="p-12 h-full flex items-center justify-center"
+                          >
+                            Explore point information
+                          </h3></a
+                        >
+                      </div>
+                    </div>
+                  </button>
+                </li>
+              </ul>
+              <!-- <ul class="pagination">
+                <li class="active">
+                  <a href="">1</a>
+                </li>
+                <li class="">
+                  <a href="">2</a>
+                </li>
+                <li><a href="">Next →</a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Route information - maybe redundant -->
+        <!-- <p class="text-center pb-4">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Commodi, nobis
+              </p>
+              <p class="text-center pb-8">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore, eum <br />Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Ducimus, beatae
+              </p> -->
+      </main>
+      <footer class="bg-green-700 mt-10 text-white p-4">
+        <div class="m-auto" style="max-width: 1200px">
+          <div class="flex flex-wrap justify-center py-4">
+            <a class="px-2 invert-svg" href="https://twitter.com/weg_uk"
+              ><img
+                alt="Twitter Logo"
+                src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/icons/twitter.svg"
+                class="w-12 fr-fic fr-dii"
+            /></a>
+            <a
+              class="px-2 invert-svg"
+              href="https://www.facebook.com/groups/WinterbourneEnvironment"
+              ><img
+                alt="Facebook Logo"
+                src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/icons/facebook.svg"
+                class="w-12 fr-fic fr-dii"
+            /></a>
+            <a
+              class="px-2 invert-svg"
+              href="https://www.youtube.com/channel/UCgrzeWRa95dt_M7vhHtRN8At"
+              ><img
+                alt="Youtube Logo"
+                src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/icons/youtube.svg"
+                class="w-12 fr-fic fr-dii"
+            /></a>
+          </div>
+          <div class="text-center text-green-200 text-sm">
+            © Winterbourne and Frome Valley Environmental Group 2021
+            <span class="px-2">|</span>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <span class="px-2">|</span>
+            <a href="/cookies-policy">Cookies Policy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const menuBtn = document.querySelector("#menu-btn");
+        const dropdown = document.querySelector("#dropdown");
+
+        menuBtn.addEventListener("click", () => {
+          dropdown.classList.toggle("hidden");
+          dropdown.classList.toggle("flex");
+        });
+      });
+    </script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

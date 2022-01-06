@@ -1,0 +1,18 @@
+{
+  "name": "frome-valley-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "npx tailwindcss -i ./src/tailwind.css -o ./public/css/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "tailwindcss": "^3.0.11"
+  }
+}
