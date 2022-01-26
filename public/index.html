@@ -7,7 +7,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css" class="rel" />
   </head>
-  <body>
+  <body
+    class="bg-no-repeat w-full"
+    style="
+      background-image: url(./assets/Picture2.png);
+      background-size: 100% 100%;
+    "
+  >
     <div class="min-h-screen flex flex-col">
       <!-- Navigation bar -->
       <div class="bg-green-500" x-data="{ hideMob: true }">
@@ -91,20 +97,30 @@
       </div>
 
       <!-- Header photo - currently a placeholder -->
-      <div
-        class="flex bg-no-repeat bg-cover banner-height h-32 lg:h-64 relative"
+      <!-- <div
+        class="w-full mx-auto bg-no-repeat bg-cover bg-center lg:h-34"
+        style="
+          background-image: url(./assets/Picture1.png);
+          height: 34rem;
+          width: full;
+          background-position-y: 90%;
+          background-position-x: 50%;
+        "
+      ></div> -->
+      <!-- <div
+        class="flex bg-no-repeat bg-cover banner-height  relative"
         style="
           background-position-y: 65%;
           background-position-x: 69%;
-          background-image: url('https://via.placeholder.com/150');
+          background-image: url('./assets/Picture1.png');
         "
       >
         <div
-          class="text-white text-xs opacity-70 absolute bottom-0 right-0 p-2"
+          class="text-white text-xs opacity-70 h-32 lg:h-64 absolute bottom-0 right-0 p-2"
         >
           Photo by Duncan
         </div>
-      </div>
+      </div> -->
 
       <!-- Main content begins -->
       <main
@@ -113,16 +129,28 @@
         style="max-width: 1200px"
       >
         <!-- Page title "Local Walks" -->
-        <h1 class="text-3xl font-bold text-center pb-8">Local Walks</h1>
-        <!-- Intro text -->
-        <hr class="py-4" />
-        <div class="flex flex-wrap mx-auto justify-center">
+
+        <div
+          class="flex flex-wrap mx-auto justify-center bg-white pt-8 md:m-10"
+        >
+          <h1 class="text-4xl font-bold text-center pb-8">
+            Frome Valley Digital Trails
+          </h1>
+          <!-- Intro text -->
+          <hr class="py-4" />
           <div class="w-full p-4 text-xl text-center">
             <div>
-              <p class="text-center pb-4">
+              <p>
+                The concept of Frome Valley Digital Trails is to make walking
+                trails that <br />
+                highlight some of the areas amazing natural assets, wonderful
+                trees, <br />interesting spots for bugs and butterflies and
+                ancient woodlands.
+              </p>
+              <p class="py-4">
                 Explore our curated walking routes along the Frome Valley region
               </p>
-              <p class="text-center pb-8">
+              <p class="pb-8">
                 For those who want to learn more about their surrounding
                 habitats, <br />QR codes found on each route can be scanned to
                 provide a glimpse into nature
@@ -130,7 +158,7 @@
             </div>
           </div>
         </div>
-        <hr class="py-4" />
+        <!-- <hr class="py-4 md:m-10" /> -->
         <!-- Dropdown "How does it work" button -->
         <div class="md:m-10 text-center">
           <button
