@@ -11,7 +11,7 @@
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
   </head>
-  <body>
+  <body onload="testFunctionTwo()">
     <div class="min-h-screen flex flex-col">
       <!-- Navigation bar -->
       <div class="bg-green-500" x-data="{ hideMob: true }">
@@ -195,7 +195,7 @@
               <ul class="">
                 <!-- Route 1 -->
                 <li class="w-full pb-4 sm:p-8">
-                  <div class="bg-green-200 rounded-md w-full">
+                  <div id="r3-p1" class="rounded-md w-full">
                     <div class="flex flex-wrap">
                       <div class="flex-auto p-4 md:p-4">
                         <h3 class="font-bold">
@@ -448,6 +448,21 @@
           dropdown.classList.toggle("flex");
         });
       });
+    </script>
+    <script>
+      testFunctionTwo = () => {
+        if (localStorage.getItem("test") == "1") {
+          console.log("hello");
+          const r3p1 = document.getElementById("r3-p1");
+          r3p1.classList.add("bg-red-200");
+          r3p1.classList.remove("bg-green-200");
+        } else {
+          console.log("no");
+          const r3p1 = document.getElementById("r3-p1");
+          r3p1.classList.add("bg-green-200");
+          r3p1.classList.remove("bg-red-200");
+        }
+      };
     </script>
     <script
       type="module"

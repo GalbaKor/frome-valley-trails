@@ -549,6 +549,13 @@
           </div>
         </div>
 
+        <button onclick="localStorage.setItem('test', 1);">Set storage</button>
+        <button onclick="localStorage.removeItem('test');">
+          Remove storage
+        </button>
+        <button onclick="alert(localStorage.getItem('test'));">Alert</button>
+        <button onclick="testFunction()">Test function</button>
+
         <!-- Route information - maybe redundant -->
         <!-- <p class="text-center pb-4">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -609,6 +616,15 @@
           dropdown.classList.toggle("flex");
         });
       });
+    </script>
+    <script>
+      testFunction = () => {
+        if (localStorage.getItem("test") == "1") {
+          console.log("hello");
+        } else {
+          console.log("no");
+        }
+      };
     </script>
     <script
       type="module"
