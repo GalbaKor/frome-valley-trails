@@ -5,11 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css" class="rel" />
+    <link rel="stylesheet" href="./css/styles.css" class="rel" />
     <script
       defer
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" />
+
+    <style>
+      @media screen and (min-width: 640px) {
+        .top-image {
+          max-width: 500px;
+        }
+      }
+    </style>
   </head>
   <body
     class="bg-no-repeat w-full"
@@ -27,7 +36,7 @@
         >
           <a class="flex items-center flex-shrink-0 text-white mr-6" href="/">
             <img
-              src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/weg_logo.png"
+              src="./assets/FromeDigitalTrailsLogo.png"
               class="h-16 lg:h-20"
               alt="Winterbourne and Frome Valley Environmental Group Logo"
             />
@@ -100,263 +109,240 @@
         </nav>
       </div>
 
-      <!-- Header photo - currently a placeholder -->
-      <!-- <div
-        class="w-full mx-auto bg-no-repeat bg-cover bg-center lg:h-34"
-        style="
-          background-image: url(./assets/Picture1.png);
-          height: 34rem;
-          width: full;
-          background-position-y: 90%;
-          background-position-x: 50%;
-        "
-      ></div> -->
-      <!-- <div
-        class="flex bg-no-repeat bg-cover banner-height  relative"
-        style="
-          background-position-y: 65%;
-          background-position-x: 69%;
-          background-image: url('./assets/Picture1.png');
-        "
-      >
-        <div
-          class="text-white text-xs opacity-70 h-32 lg:h-64 absolute bottom-0 right-0 p-2"
-        >
-          Photo by Duncan
-        </div>
-      </div> -->
-
       <!-- Main content begins -->
+      <!-- Top Image (overlapped by text) -->
+      <img src="assets/Picture1.png" class="mx-auto w-full top-image" />
+
+      <!-- Main Content Container -->
       <main
         role="main"
-        class="container mx-auto pt-8 flex-grow"
+        class="container mx-auto flex-grow"
         style="max-width: 1200px"
       >
-        <!-- Page title "Local Walks" -->
-
+        <!-- Inner Main Content Container -->
         <div
-          class="flex flex-wrap mx-auto justify-center bg-white pt-8 md:m-10"
+          class="flex flex-wrap mx-auto justify-center bg-white pt-8 -mt-8 md:mx-10 rounded-t-3xl"
         >
-          <h1 class="text-4xl font-bold text-center pb-8">
+          <!-- Page title "Frome Valley Digital Trails" -->
+          <h1 class="text-xl font-bold text-center lg:text-2xl">
             Frome Valley Digital Trails
           </h1>
           <!-- Intro text -->
           <hr class="py-4" />
-          <div class="w-full p-4 text-xl text-center">
+          <div class="w-full p-4 text-sm rounded-3xl bg-amber-100 m-4">
             <div>
               <p>
                 The concept of Frome Valley Digital Trails is to make walking
-                trails that <br />
-                highlight some of the areas amazing natural assets, wonderful
-                trees, <br />interesting spots for bugs and butterflies and
+                trails that highlight some of the areas amazing natural assets,
+                wonderful trees, interesting spots for bugs and butterflies and
                 ancient woodlands.
               </p>
               <p class="py-4">
                 Explore our curated walking routes along the Frome Valley region
               </p>
-              <p class="pb-8">
+              <p class="pb-4">
                 For those who want to learn more about their surrounding
-                habitats, <br />QR codes found on each route can be scanned to
-                provide a glimpse into nature
+                habitats, QR codes found on each route can be scanned to provide
+                a glimpse into nature
               </p>
             </div>
           </div>
-        </div>
-        <!-- <hr class="py-4 md:m-10" /> -->
-        <!-- Dropdown "How does it work" button -->
-        <div class="md:m-10 text-center">
-          <button
-            class="bg-green-500 px-4 py-6 rounded container text-white text-2xl"
-            id="menu-btn"
-          >
-            How does it work?
-          </button>
-          <div
-            class="bg-gray-200 hidden flex-col rounded mt-1 p-2 text-sm"
-            id="dropdown"
-          >
-            <ol class="text-center text-base">
-              <li class="pb-2">1. Choose the trail that you like</li>
-              <li class="pb-2">
-                2. Start the trail by clicking the button on its page
-              </li>
-              <li class="pb-2">
-                3. Scan the QR codes along the way to learn more about the area
-              </li>
-              <li class="pb-2">
-                4. Answer a quiz question at the end of the info page to earn a
-                sticker
-              </li>
-              <li class="pb-4">5. Enjoy your walk!</li>
-            </ol>
-            <p class="text-center text-base">
-              If you do not want to scan the QR codes, you can still access the
-              information about each <br />route point by opening the drop down
-              menu "Route Points" on the trail's page.
 
-              <br /><br />
+          <!-- How does it work button -->
+          <div class="md:m-10 text-center">
+            <button
+              class="bg-green-500 p-2 rounded-full container text-white text-xl drop-shadow-md"
+              id="menu-btn"
+            >
+              <i class="lni lni-question-circle"></i> How does it work?
+            </button>
+            <div
+              class="bg-gray-200 hidden flex-col rounded mt-1 p-2 text-sm"
+              id="dropdown"
+            >
+              <ol class="text-center text-base">
+                <li class="pb-2">1. Choose the trail that you like</li>
+                <li class="pb-2">
+                  2. Start the trail by clicking the button on its page
+                </li>
+                <li class="pb-2">
+                  3. Scan the QR codes along the way to learn more about the
+                  area
+                </li>
+                <li class="pb-2">
+                  4. Answer a quiz question at the end of the info page to earn
+                  a sticker
+                </li>
+                <li class="pb-4">5. Enjoy your walk!</li>
+              </ol>
+              <p class="text-center text-base">
+                If you do not want to scan the QR codes, you can still access
+                the information about each <br />route point by opening the drop
+                down menu "Route Points" on the trail's page.
 
-              You can also read the written directions by opening them with the
-              "Route Directions" button.
-            </p>
+                <br /><br />
+
+                You can also read the written directions by opening them with
+                the "Route Directions" button.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <!-- Route pages -->
-        <div class="flex flex-wrap b-4 mx-auto justify-center">
-          <div class="w-full p-4">
-            <div>
-              <ul class="post-list flex flex-wrap">
-                <!-- Route 1 -->
-                <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
-                  <button
-                    class="bg-green-200 rounded-md"
-                    onclick="window.location.href='./routes/route-1.html';"
-                  >
-                    <div class="flex flex-wrap">
-                      <div class="flex-auto p-4 md:p-4">
-                        <h3 class="font-bold">
-                          <a href="./routes/route-1.html"
-                            >Hambrook Memorial Walk</a
+          <!-- Route pages -->
+          <div class="flex flex-wrap b-4 mx-auto justify-center">
+            <div class="w-full p-4">
+              <div>
+                <ul class="post-list flex flex-wrap">
+                  <!-- Route 1 -->
+                  <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
+                    <button
+                      class="bg-green-200 rounded-md"
+                      onclick="window.location.href='./routes/route-1.html';"
+                    >
+                      <div class="flex flex-wrap">
+                        <div class="flex-auto p-4 md:p-4">
+                          <h3 class="font-bold">
+                            <a href="./routes/route-1.html"
+                              >Hambrook Memorial Walk</a
+                            >
+                          </h3>
+                          <p class="info text-sm pb-2">
+                            Posted in Routes on January 1, 2022.
+                          </p>
+                          <p class="excerpt text-center">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Aspernatur atque itaque eius minus dolorem
+                            quibusdam nam, blanditiis amet neque error,
+                            repellendus nemo tenetur rerum tempore, ipsam
+                            molestiae molestias distinctio totam.
+                          </p>
+                        </div>
+                        <div
+                          class="flex-auto bg-no-repeat bg-cover"
+                          style="
+                            background-image: url('./assets/Picture1.png');
+                            background-position-y: 100%;
+                          "
+                        >
+                          <a class="" href="./routes/route-1.html"
+                            ><h3 class="p-12 text-white text-xl text-bold">
+                              Open
+                            </h3></a
                           >
-                        </h3>
-                        <p class="info text-sm pb-2">
-                          Posted in Routes on January 1, 2022.
-                        </p>
-                        <p class="excerpt text-center">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Aspernatur atque itaque eius minus dolorem
-                          quibusdam nam, blanditiis amet neque error,
-                          repellendus nemo tenetur rerum tempore, ipsam
-                          molestiae molestias distinctio totam.
-                        </p>
+                        </div>
                       </div>
-                      <div
-                        class="flex-auto bg-no-repeat bg-cover"
-                        style="
-                          background-image: url('./assets/Picture1.png');
-                          background-position-y: 100%;
-                        "
-                      >
-                        <a class="" href="./routes/route-1.html"
-                          ><h3 class="p-12 text-white text-xl text-bold">
-                            Open
-                          </h3></a
+                    </button>
+                  </li>
+                  <!-- Route 2 -->
+                  <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
+                    <button
+                      class="bg-green-200 rounded-md"
+                      onclick="window.location.href='./routes/route-2.html';"
+                    >
+                      <div class="flex flex-wrap">
+                        <div class="flex-auto p-4 md:p-4">
+                          <h3 class="font-bold">
+                            <a href="./routes/route-2.html">Route 2</a>
+                          </h3>
+                          <p class="info text-sm pb-2">
+                            Posted in Routes on January 1, 2022.
+                          </p>
+                          <p class="excerpt text-center">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Aspernatur atque itaque eius minus dolorem
+                            quibusdam nam, blanditiis amet neque error,
+                            repellendus nemo tenetur rerum tempore, ipsam
+                            molestiae molestias distinctio totam.
+                          </p>
+                        </div>
+                        <div
+                          class="flex-auto bg-no-repeat bg-cover"
+                          style="
+                            background-image: url('./assets/Picture1.png');
+                            background-position-y: 100%;
+                          "
                         >
+                          <a class="" href="./routes/route-2.html"
+                            ><h3 class="p-12 text-white text-xl">Open</h3></a
+                          >
+                        </div>
                       </div>
-                    </div>
-                  </button>
-                </li>
-                <!-- Route 2 -->
-                <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
-                  <button
-                    class="bg-green-200 rounded-md"
-                    onclick="window.location.href='./routes/route-2.html';"
-                  >
-                    <div class="flex flex-wrap">
-                      <div class="flex-auto p-4 md:p-4">
-                        <h3 class="font-bold">
-                          <a href="./routes/route-2.html">Route 2</a>
-                        </h3>
-                        <p class="info text-sm pb-2">
-                          Posted in Routes on January 1, 2022.
-                        </p>
-                        <p class="excerpt text-center">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Aspernatur atque itaque eius minus dolorem
-                          quibusdam nam, blanditiis amet neque error,
-                          repellendus nemo tenetur rerum tempore, ipsam
-                          molestiae molestias distinctio totam.
-                        </p>
-                      </div>
-                      <div
-                        class="flex-auto bg-no-repeat bg-cover"
-                        style="
-                          background-image: url('./assets/Picture1.png');
-                          background-position-y: 100%;
-                        "
-                      >
-                        <a class="" href="./routes/route-2.html"
-                          ><h3 class="p-12 text-white text-xl">Open</h3></a
+                    </button>
+                  </li>
+                  <!-- Route 3 -->
+                  <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
+                    <button
+                      class="bg-green-200 rounded-md"
+                      onclick="window.location.href='./routes/route-3.html';"
+                    >
+                      <div class="flex flex-wrap">
+                        <div class="flex-auto p-4 md:p-4">
+                          <h3 class="font-bold">
+                            <a href="./routes/route-3.html">Route 3</a>
+                          </h3>
+                          <p class="info text-sm pb-2">
+                            Posted in Routes on January 1, 2022.
+                          </p>
+                          <p class="excerpt text-center">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Aspernatur atque itaque eius minus dolorem
+                            quibusdam nam, blanditiis amet neque error,
+                            repellendus nemo tenetur rerum tempore, ipsam
+                            molestiae molestias distinctio totam.
+                          </p>
+                        </div>
+                        <div
+                          class="flex-auto bg-no-repeat bg-cover"
+                          style="
+                            background-image: url('./assets/Picture1.png');
+                            background-position-y: 100%;
+                          "
                         >
+                          <a class="" href="./routes/route-3.html"
+                            ><h3 class="p-12 text-white text-xl">Open</h3></a
+                          >
+                        </div>
                       </div>
-                    </div>
-                  </button>
-                </li>
-                <!-- Route 3 -->
-                <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
-                  <button
-                    class="bg-green-200 rounded-md"
-                    onclick="window.location.href='./routes/route-3.html';"
-                  >
-                    <div class="flex flex-wrap">
-                      <div class="flex-auto p-4 md:p-4">
-                        <h3 class="font-bold">
-                          <a href="./routes/route-3.html">Route 3</a>
-                        </h3>
-                        <p class="info text-sm pb-2">
-                          Posted in Routes on January 1, 2022.
-                        </p>
-                        <p class="excerpt text-center">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Aspernatur atque itaque eius minus dolorem
-                          quibusdam nam, blanditiis amet neque error,
-                          repellendus nemo tenetur rerum tempore, ipsam
-                          molestiae molestias distinctio totam.
-                        </p>
-                      </div>
-                      <div
-                        class="flex-auto bg-no-repeat bg-cover"
-                        style="
-                          background-image: url('./assets/Picture1.png');
-                          background-position-y: 100%;
-                        "
-                      >
-                        <a class="" href="./routes/route-3.html"
-                          ><h3 class="p-12 text-white text-xl">Open</h3></a
+                    </button>
+                  </li>
+                  <!-- Route 4 -->
+                  <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
+                    <button
+                      class="bg-green-200 rounded-md"
+                      onclick="window.location.href='./routes/route-4.html';"
+                    >
+                      <div class="flex flex-wrap">
+                        <div class="flex-auto p-4 md:p-4">
+                          <h3 class="font-bold">
+                            <a href="./routes/route-4.html">Route 4</a>
+                          </h3>
+                          <p class="info text-sm pb-2">
+                            Posted in Routes on January 1, 2022.
+                          </p>
+                          <p class="excerpt text-center">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Aspernatur atque itaque eius minus dolorem
+                            quibusdam nam, blanditiis amet neque error,
+                            repellendus nemo tenetur rerum tempore, ipsam
+                            molestiae molestias distinctio totam.
+                          </p>
+                        </div>
+                        <div
+                          class="flex-auto bg-no-repeat bg-cover"
+                          style="
+                            background-image: url('./assets/Picture1.png');
+                            background-position-y: 100%;
+                          "
                         >
+                          <a class="" href="./routes/route-4.html"
+                            ><h3 class="p-12 text-white text-xl">Open</h3></a
+                          >
+                        </div>
                       </div>
-                    </div>
-                  </button>
-                </li>
-                <!-- Route 4 -->
-                <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
-                  <button
-                    class="bg-green-200 rounded-md"
-                    onclick="window.location.href='./routes/route-4.html';"
-                  >
-                    <div class="flex flex-wrap">
-                      <div class="flex-auto p-4 md:p-4">
-                        <h3 class="font-bold">
-                          <a href="./routes/route-4.html">Route 4</a>
-                        </h3>
-                        <p class="info text-sm pb-2">
-                          Posted in Routes on January 1, 2022.
-                        </p>
-                        <p class="excerpt text-center">
-                          Lorem ipsum, dolor sit amet consectetur adipisicing
-                          elit. Aspernatur atque itaque eius minus dolorem
-                          quibusdam nam, blanditiis amet neque error,
-                          repellendus nemo tenetur rerum tempore, ipsam
-                          molestiae molestias distinctio totam.
-                        </p>
-                      </div>
-                      <div
-                        class="flex-auto bg-no-repeat bg-cover"
-                        style="
-                          background-image: url('./assets/Picture1.png');
-                          background-position-y: 100%;
-                        "
-                      >
-                        <a class="" href="./routes/route-4.html"
-                          ><h3 class="p-12 text-white text-xl">Open</h3></a
-                        >
-                      </div>
-                    </div>
-                  </button>
-                </li>
-              </ul>
-              <!-- <ul class="pagination">
+                    </button>
+                  </li>
+                </ul>
+                <!-- <ul class="pagination">
                 <li class="active">
                   <a href="">1</a>
                 </li>
@@ -365,9 +351,12 @@
                 </li>
                 <li><a href="">Next →</a></li>
               </ul> -->
+              </div>
             </div>
           </div>
         </div>
+        <!-- <hr class="py-4 md:m-10" /> -->
+        <!-- Dropdown "How does it work" button -->
       </main>
       <footer class="bg-green-700 mt-10 text-white p-4">
         <div class="m-auto" style="max-width: 1200px">
