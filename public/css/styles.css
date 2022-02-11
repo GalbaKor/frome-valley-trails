@@ -4073,6 +4073,26 @@ textarea.form-control.is-invalid {
   height: 100%;
 }
 
+.h-60 {
+  height: 15rem;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
+.h-28 {
+  height: 7rem;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
@@ -4083,6 +4103,10 @@ textarea.form-control.is-invalid {
 
 .max-h-full {
   max-height: 100%;
+}
+
+.max-h-32 {
+  max-height: 8rem;
 }
 
 .min-h-screen {
@@ -4698,6 +4722,16 @@ textarea.form-control.is-invalid {
 .hover\:scale-100:hover {
   --tw-scale-x: 1;
   --tw-scale-y: 1;
+  transform: var(--tw-transform);
+}
+
+.hover\:scale-y-110:hover {
+  --tw-scale-y: 1.1;
+  transform: var(--tw-transform);
+}
+
+.hover\:scale-x-110:hover {
+  --tw-scale-x: 1.1;
   transform: var(--tw-transform);
 }
 
