@@ -10,6 +10,23 @@
       defer
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
+    <style>
+      .responsive-iframe-container {
+        position: relative;
+        padding-bottom: 56.1%;
+        height: 0;
+        overflow: hidden;
+      }
+      .responsive-iframe-container iframe,
+      .responsive-iframe-container object,
+      .responsive-iframe-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
     <div class="min-h-screen flex flex-col">
@@ -216,16 +233,18 @@
           </button>
         </div>
 
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/MIYsur5-2gk"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          class="mx-auto p-4"
-        ></iframe>
+        <div class="responsive-iframe-container">
+          <iframe
+            width="730"
+            height="548"
+            src="https://www.youtube.com/embed/MIYsur5-2gk"
+            title="YouTube video player"
+            frameborder="0"
+            allowfullscreen
+            class="mx-auto p-4"
+          ></iframe>
+        </div>
+
         <!-- Static Image? -->
         <!-- <img
           src="/public/assets/y-shaped-tree-1.png"
