@@ -132,35 +132,40 @@
           class="flex flex-wrap mx-auto justify-center bg-white pt-8 -mt-8 md:-mt-16 lg:-mt-24 md:mx-10 rounded-t-3xl"
         >
           <!-- Page title "Frome Valley Digital Trails" -->
-          <h1 class="text-xl font-bold text-center lg:text-2xl">
+          <h1 class="text-xl py-2 text-center lg:text-2xl">
             Frome Valley Digital Trails
           </h1>
           <!-- Intro text -->
-          <hr class="py-4" />
           <div
-            class="w-full p-4 text-sm rounded-3xl bg-amber-100 m-4 drop-shadow-md-custom"
+            class="w-full lg:mx-36 p-4 text-sm rounded-3xl bg-amber-100 m-4 drop-shadow-md-custom"
           >
             <div>
               <p>
-                The concept of Frome Valley Digital Trails is to make walking
-                trails that highlight some of the areas amazing natural assets,
-                wonderful trees, interesting spots for bugs and butterflies and
-                ancient woodlands.
+                Frome Valley Digital Trails is a collection of curated walking
+                routes situated within the Frome Valley region (Winterbourne -
+                South Gloucestershire).
+                <br /><br />
+                QR codes have been placed along these routes to highlight some
+                of the area's amazing natural assets; wonderful trees,
+                interesting spots for bugs and butterflies and ancient
+                woodlands.
+                <br /><br />
+                The QR codes can be scanned with any smartphone to open webpages
+                containing information about these natural assets alongside an
+                optional quiz at the end of each point!
+                <br /><br />
+                Whether alone, with friends or family, we hope you enjoy
+                participating in these walks and exploring the breadth of flora
+                and fauna sitting on our doorstep.
               </p>
-              <p class="py-4">
-                Explore our curated walking routes along the Frome Valley region
-              </p>
-              <p class="pb-4">
-                For those who want to learn more about their surrounding
-                habitats, QR codes found on each route can be scanned to provide
-                a glimpse into nature
-              </p>
+
+              <p class="pb-4"></p>
             </div>
           </div>
 
           <!-- How does it work button -->
           <div class="md:m-10 text-center">
-            <button
+            <!-- <button
               class="bg-green-500 p-2 rounded-full container text-white text-xl drop-shadow-md drop-shadow-md-custom"
               id="menu-btn"
             >
@@ -195,6 +200,37 @@
                 You can also read the written directions by opening them with
                 the "Route Directions" button.
               </p>
+            </div> -->
+
+            <!-- box attempt 2  -->
+            <button
+              class="bg-green-500 p-2 rounded-full container text-white text-xl drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
+              id="howDoesItWork-button"
+            >
+              <i class="lni lni-question-circle"></i> How does it work?
+            </button>
+            <!-- Modal content -->
+            <!-- modal background -->
+            <div
+              id="howDoesItWork-modal"
+              class="hidden fixed z-10 pt-25 left-0 top-0 w-full h-full overflow-auto bg-white bg-opacity-50"
+            >
+              <!-- modal inner -->
+              <div
+                class="bg-green-200 m-auto p-5 border-solid border-2 border-blue-200 w-2/4"
+              >
+                <span
+                  id="howDoesItWork-close"
+                  class="float-right text-3xl cursor-pointer hover:opacity-50"
+                  >&times;</span
+                >
+                <ul>
+                  <li><i class="lni lni-question-circle"></i> step 1</li>
+                  <li><i class="lni lni-question-circle"></i> step 2</li>
+                  <li><i class="lni lni-question-circle"></i> step 3</li>
+                  <li><i class="lni lni-question-circle"></i> step 4</li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -230,7 +266,7 @@
                           </p>
                         </div>
                         <div
-                          class="flex-auto bg-no-repeat bg-cover rounded-lg"
+                          class="flex-auto bg-no-repeat bg-cover rounded-lg hover:scale-110 transition duration-300 ease-in-out"
                           style="
                             background-image: url('./assets/Picture1.png');
                             background-position-y: 100%;
@@ -270,7 +306,7 @@
                           </p>
                         </div>
                         <div
-                          class="flex-auto bg-no-repeat bg-cover rounded-lg"
+                          class="flex-auto bg-no-repeat bg-cover rounded-lg hover:scale-110 transition duration-300 ease-in-out"
                           style="
                             background-image: url('./assets/Picture1.png');
                             background-position-y: 100%;
@@ -308,7 +344,7 @@
                           </p>
                         </div>
                         <div
-                          class="flex-auto bg-no-repeat bg-cover rounded-lg"
+                          class="flex-auto bg-no-repeat bg-cover rounded-lg hover:scale-110 transition duration-300 ease-in-out"
                           style="
                             background-image: url('./assets/Picture1.png');
                             background-position-y: 100%;
@@ -346,7 +382,7 @@
                           </p>
                         </div>
                         <div
-                          class="flex-auto bg-no-repeat bg-cover rounded-lg"
+                          class="flex-auto bg-no-repeat bg-cover rounded-lg hover:scale-110 transition duration-300 ease-in-out"
                           style="
                             background-image: url('./assets/Picture1.png');
                             background-position-y: 100%;
@@ -423,6 +459,34 @@
           dropdown.classList.toggle("flex");
         });
       });
+    </script>
+    <!-- How does it work modal box -->
+    <script>
+      // Get the modal
+      var howDoesItWorkModal = document.getElementById("howDoesItWork-modal");
+
+      // Get the button that opens the modal
+      var howDoesItWorkButton = document.getElementById("howDoesItWork-button");
+
+      // Get the <span> element that closes the modal
+      var howDoesItWorkClose = document.getElementById("howDoesItWork-close");
+
+      // When the user clicks the button, open the modal
+      howDoesItWorkButton.onclick = function () {
+        howDoesItWorkModal.style.display = "block";
+      };
+
+      // When the user clicks on <span> (x), close the modal
+      howDoesItWorkClose.onclick = function () {
+        howDoesItWorkModal.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == howDoesItWorkModal) {
+          howDoesItWorkModal.style.display = "none";
+        }
+      };
     </script>
     <script
       type="module"
