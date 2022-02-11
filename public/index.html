@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/FromeDigitalTrailsLogo.png"
+    />
     <link rel="stylesheet" href="./css/styles.css" class="rel" />
     <script
       defer
@@ -17,16 +22,15 @@
         .top-image {
           max-width: 500px;
         }
+        .drop-shadow-md-custom {
+          --tw-drop-shadow: drop-shadow(-2px 4px 3px rgb(0 0 0 / 0.4))
+            drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2));
+          filter: var(--tw-filter);
+        }
       }
     </style>
   </head>
-  <body
-    class="bg-no-repeat w-full"
-    style="
-      background-image: url(./assets/Picture2.png);
-      background-size: 100% 100%;
-    "
-  >
+  <body>
     <div class="min-h-screen flex flex-col">
       <!-- Navigation bar -->
       <div class="bg-green-500" x-data="{ hideMob: true }">
@@ -111,7 +115,11 @@
 
       <!-- Main content begins -->
       <!-- Top Image (overlapped by text) -->
-      <img src="assets/Picture1.png" class="mx-auto w-full top-image" />
+      <!-- <img src="assets/Picture1.png" class="mx-auto w-full top-image" /> -->
+      <div
+        class="bg-center bg-no-repeat bg-cover py-24 md:py-36 lg:py-48 banner-image"
+        style="background-image: url(./assets/Picture1.png)"
+      ></div>
 
       <!-- Main Content Container -->
       <main
@@ -121,7 +129,7 @@
       >
         <!-- Inner Main Content Container -->
         <div
-          class="flex flex-wrap mx-auto justify-center bg-white pt-8 -mt-8 md:mx-10 rounded-t-3xl"
+          class="flex flex-wrap mx-auto justify-center bg-white pt-8 -mt-8 md:-mt-16 lg:-mt-24 md:mx-10 rounded-t-3xl"
         >
           <!-- Page title "Frome Valley Digital Trails" -->
           <h1 class="text-xl font-bold text-center lg:text-2xl">
@@ -129,7 +137,9 @@
           </h1>
           <!-- Intro text -->
           <hr class="py-4" />
-          <div class="w-full p-4 text-sm rounded-3xl bg-amber-100 m-4">
+          <div
+            class="w-full p-4 text-sm rounded-3xl bg-amber-100 m-4 drop-shadow-md-custom"
+          >
             <div>
               <p>
                 The concept of Frome Valley Digital Trails is to make walking
@@ -151,7 +161,7 @@
           <!-- How does it work button -->
           <div class="md:m-10 text-center">
             <button
-              class="bg-green-500 p-2 rounded-full container text-white text-xl drop-shadow-md"
+              class="bg-green-500 p-2 rounded-full container text-white text-xl drop-shadow-md drop-shadow-md-custom"
               id="menu-btn"
             >
               <i class="lni lni-question-circle"></i> How does it work?
@@ -194,9 +204,11 @@
               <div>
                 <ul class="post-list flex flex-wrap">
                   <!-- Route 1 -->
-                  <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
+                  <li
+                    class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8 drop-shadow-md-custom"
+                  >
                     <button
-                      class="bg-green-200 rounded-md"
+                      class="bg-green-200 rounded-lg"
                       onclick="window.location.href='./routes/route-1.html';"
                     >
                       <div class="flex flex-wrap">
@@ -218,7 +230,7 @@
                           </p>
                         </div>
                         <div
-                          class="flex-auto bg-no-repeat bg-cover"
+                          class="flex-auto bg-no-repeat bg-cover rounded-lg"
                           style="
                             background-image: url('./assets/Picture1.png');
                             background-position-y: 100%;
@@ -234,9 +246,11 @@
                     </button>
                   </li>
                   <!-- Route 2 -->
-                  <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
+                  <li
+                    class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8 drop-shadow-md-custom"
+                  >
                     <button
-                      class="bg-green-200 rounded-md"
+                      class="bg-green-200 rounded-lg"
                       onclick="window.location.href='./routes/route-2.html';"
                     >
                       <div class="flex flex-wrap">
@@ -256,7 +270,7 @@
                           </p>
                         </div>
                         <div
-                          class="flex-auto bg-no-repeat bg-cover"
+                          class="flex-auto bg-no-repeat bg-cover rounded-lg"
                           style="
                             background-image: url('./assets/Picture1.png');
                             background-position-y: 100%;
@@ -270,9 +284,11 @@
                     </button>
                   </li>
                   <!-- Route 3 -->
-                  <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
+                  <li
+                    class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8 drop-shadow-md-custom"
+                  >
                     <button
-                      class="bg-green-200 rounded-md"
+                      class="bg-green-200 rounded-lg"
                       onclick="window.location.href='./routes/route-3.html';"
                     >
                       <div class="flex flex-wrap">
@@ -292,7 +308,7 @@
                           </p>
                         </div>
                         <div
-                          class="flex-auto bg-no-repeat bg-cover"
+                          class="flex-auto bg-no-repeat bg-cover rounded-lg"
                           style="
                             background-image: url('./assets/Picture1.png');
                             background-position-y: 100%;
@@ -306,9 +322,11 @@
                     </button>
                   </li>
                   <!-- Route 4 -->
-                  <li class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8">
+                  <li
+                    class="w-full pb-4 lg:pb-0 lg:w-1/2 sm:p-8 drop-shadow-md-custom"
+                  >
                     <button
-                      class="bg-green-200 rounded-md"
+                      class="bg-green-200 rounded-lg"
                       onclick="window.location.href='./routes/route-4.html';"
                     >
                       <div class="flex flex-wrap">
@@ -328,7 +346,7 @@
                           </p>
                         </div>
                         <div
-                          class="flex-auto bg-no-repeat bg-cover"
+                          class="flex-auto bg-no-repeat bg-cover rounded-lg"
                           style="
                             background-image: url('./assets/Picture1.png');
                             background-position-y: 100%;

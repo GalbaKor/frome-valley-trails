@@ -4119,6 +4119,10 @@ textarea.form-control.is-invalid {
   border-radius: 0.75rem;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .rounded-t-3xl {
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
@@ -4288,6 +4292,11 @@ textarea.form-control.is-invalid {
   padding-bottom: 12rem;
 }
 
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
 .pl-2 {
   padding-left: 0.5rem;
 }
@@ -4420,6 +4429,11 @@ textarea.form-control.is-invalid {
   filter: var(--tw-filter);
 }
 
+.drop-shadow {
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  filter: var(--tw-filter);
+}
+
 .filter {
   filter: var(--tw-filter);
 }
@@ -4511,6 +4525,10 @@ textarea.form-control.is-invalid {
     margin-right: 2.5rem;
   }
 
+  .md\:-mt-16 {
+    margin-top: -4rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -4527,11 +4545,20 @@ textarea.form-control.is-invalid {
     padding-left: 0px;
     padding-right: 0px;
   }
+
+  .md\:py-36 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .lg\:mt-0 {
     margin-top: 0px;
+  }
+
+  .lg\:-mt-24 {
+    margin-top: -6rem;
   }
 
   .lg\:inline-block {
@@ -4585,6 +4612,11 @@ textarea.form-control.is-invalid {
   .lg\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
+  }
+
+  .lg\:py-48 {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
   }
 
   .lg\:pl-0 {
