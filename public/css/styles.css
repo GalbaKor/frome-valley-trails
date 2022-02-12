@@ -3997,6 +3997,11 @@ textarea.form-control.is-invalid {
   margin-right: auto;
 }
 
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
 .mr-6 {
   margin-right: 1.5rem;
 }
@@ -4151,6 +4156,18 @@ textarea.form-control.is-invalid {
 
 .w-60 {
   width: 15rem;
+}
+
+.w-2\/12 {
+  width: 16.666667%;
+}
+
+.w-1\/12 {
+  width: 8.333333%;
+}
+
+.w-4\/12 {
+  width: 33.333333%;
 }
 
 .max-w-3xl {
@@ -4446,6 +4463,10 @@ textarea.form-control.is-invalid {
   padding: 0.25rem;
 }
 
+.p-6 {
+  padding: 1.5rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -4733,6 +4754,10 @@ textarea.form-control.is-invalid {
 .hover\:scale-x-110:hover {
   --tw-scale-x: 1.1;
   transform: var(--tw-transform);
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
 }
 
 .hover\:border-white:hover {
