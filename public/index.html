@@ -46,11 +46,18 @@
         filter: var(--tw-filter);
       }
 
-      /* @media screen and (min-width: 640px) {
-        .top-image {
-          max-width: 500px;
-        }
-      } */
+      #howDoesItWork-modalInner {
+        display: table;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
     </style>
   </head>
   <body>
@@ -138,14 +145,14 @@
       </div>
 
       <!-- Main content begins -->
-      <!-- Top Image (overlapped by text) -->
-      <!-- <img src="assets/Picture1.png" class="mx-auto w-full top-image" /> -->
+
+      <!-- Top Image (overlapped by main content) -->
       <div
         class="bg-center bg-no-repeat bg-cover py-24 md:py-36 lg:py-48 banner-image"
         style="background-image: url(./assets/Picture1.png)"
       ></div>
 
-      <!-- Main Content Container -->
+      <!-- Main Content Container ()-->
       <main
         role="main"
         class="container mx-auto flex-grow"
@@ -203,7 +210,10 @@
               class="hidden fixed z-10 pt-14 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50"
             >
               <!-- modal inner -->
-              <div class="textBgColour m-auto p-5 w-10/12 md:w-80 rounded-md">
+              <div
+                id="howDoesItWork-modalInner"
+                class="textBgColour my-auto mx-2 md:mx-auto p-5 md:w-96 rounded-md"
+              >
                 <!-- <span
                   id="howDoesItWork-close"
                   class="float-right text-3xl cursor-pointer hover:opacity-50"
@@ -345,6 +355,8 @@
           </div>
         </div>
       </main>
+
+      <!-- Footer (social buttons) -->
       <footer class="heroFooterColour mt-10 text-white p-4">
         <div class="m-auto" style="max-width: 1200px">
           <div class="flex flex-wrap justify-center py-4 text-center">

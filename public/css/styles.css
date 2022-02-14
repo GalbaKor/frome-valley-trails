@@ -4002,6 +4002,11 @@ textarea.form-control.is-invalid {
   margin-bottom: auto;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mr-6 {
   margin-right: 1.5rem;
 }
@@ -4844,6 +4849,10 @@ textarea.form-control.is-invalid {
 }
 
 @media (min-width: 640px) {
+  .sm\:w-80 {
+    width: 20rem;
+  }
+
   .sm\:p-8 {
     padding: 2rem;
   }
@@ -4857,6 +4866,16 @@ textarea.form-control.is-invalid {
   .md\:mx-10 {
     margin-left: 2.5rem;
     margin-right: 2.5rem;
+  }
+
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   .md\:-mt-16 {
@@ -4881,6 +4900,10 @@ textarea.form-control.is-invalid {
 
   .md\:w-80 {
     width: 20rem;
+  }
+
+  .md\:w-96 {
+    width: 24rem;
   }
 
   .md\:p-4 {
