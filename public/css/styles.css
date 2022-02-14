@@ -4076,6 +4076,10 @@ textarea.form-control.is-invalid {
   width: 6rem;
 }
 
+.w-1\/4 {
+  width: 25%;
+}
+
 .max-w-3xl {
   max-width: 48rem;
 }
@@ -4494,6 +4498,10 @@ textarea.form-control.is-invalid {
 
 .opacity-80 {
   opacity: 0.8;
+}
+
+.opacity-0 {
+  opacity: 0;
 }
 
 .shadow-lg {

@@ -128,7 +128,7 @@
         class="flex flex-wrap mx-auto justify-center bg-white pt-8 -mt-8 md:-mt-16 lg:-mt-24 md:mx-10 rounded-t-3xl"
       >
         <!-- Page title "Frome Valley Digital Trails" -->
-        <div class="flex-column">
+        <div class="flex-column w-full">
           <h1 class="text-xl py-2 text-center lg:text-2xl">
             Hambrook Memorial Trail
           </h1>
@@ -266,7 +266,7 @@
         <div class="m-4 md:m-10 text-center w-full lg:mx-36">
           <!-- Button to open the dropdown window (toggles) -->
           <button
-            class="w-80 sm:w-full buttonColour p-4 rounded-full container text-white text-xl drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
+            class="buttonColour p-4 rounded-full container text-white text-xl drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
             id="menu-btn"
           >
             <i class="lni lni-map-marker"></i>
@@ -279,10 +279,10 @@
             id="dropdown"
           >
             <!-- Point 1 Sticker starts-->
-            <div class="flex flex-row sm:w-3/4 md:w-1/2 mx-auto pb-2">
+            <div class="flex flex-row sm:w-3/4 md:w-1/2 mx-auto pb-2 w-full">
               <!-- Inner Categories container -->
               <div class="w-full text-left m-auto">
-                <div class="w-full m-auto pb-2">
+                <div class="m-auto pb-2">
                   <a href="./route-points/y-shaped-tree.html">
                     <p class="font-bold text-lg underline">The Y Shaped Tree</p>
                     <p class="">Distance travelled - X miles</p>
@@ -290,14 +290,10 @@
                 </div>
               </div>
               <!-- Inner Sticker container -->
-              <div class="w-full sm:w-1/2 m-auto">
+              <div class="w-1/4 sm:w-1/2 m-auto">
                 <div
-                  class="m-auto h-24 w-24 bg-white rounded-full hidden"
+                  class="m-auto h-24 w-24 bg-white rounded-full collectableSticker-1"
                 ></div>
-                <image
-                  class="m-auto max-h-24"
-                  src="../../assets/FromeDigitalTrailsLogo.png"
-                ></image>
               </div>
             </div>
             <!-- Point 1 sticker ends -->
@@ -306,7 +302,7 @@
             <div class="flex flex-row sm:w-3/4 md:w-1/2 mx-auto pb-2">
               <!-- Inner Categories container -->
               <div class="w-full text-left m-auto">
-                <div class="w-full m-auto pb-2">
+                <div class="m-auto pb-2">
                   <a href="./route-points/y-shaped-tree.html">
                     <p class="font-bold text-lg underline">The Y Shaped Tree</p>
                     <p class="">Distance travelled - X miles</p>
@@ -314,12 +310,10 @@
                 </div>
               </div>
               <!-- Inner Sticker container -->
-              <div class="w-full sm:w-1/2 m-auto">
-                <div class="m-auto h-24 w-24 bg-white rounded-full"></div>
-                <image
-                  class="m-auto max-h-24 hidden"
-                  src="../../assets/logo.png"
-                ></image>
+              <div class="w-1/4 sm:w-1/2 m-auto">
+                <div
+                  class="m-auto h-24 w-24 bg-white rounded-full collectableSticker-2"
+                ></div>
               </div>
             </div>
             <!-- Point 2 sticker ends -->
@@ -328,33 +322,33 @@
             <div class="flex flex-row sm:w-3/4 md:w-1/2 mx-auto pb-2">
               <!-- Inner Categories container -->
               <div class="w-full text-left m-auto">
-                <div class="w-full m-auto pb-2">
-                  <a href="#">
+                <div class="m-auto pb-2">
+                  <a href="./route-points/y-shaped-tree.html">
                     <p class="font-bold text-lg underline">The Y Shaped Tree</p>
                     <p class="">Distance travelled - X miles</p>
                   </a>
                 </div>
               </div>
               <!-- Inner Sticker container -->
-              <div class="w-full sm:w-1/2 m-auto">
+              <div class="w-1/4 sm:w-1/2 m-auto">
                 <div class="m-auto h-24 w-24 bg-white rounded-full"></div>
-                <image
-                  class="m-auto max-h-24 hidden"
-                  src="../../assets/logo.png"
-                ></image>
               </div>
             </div>
             <!-- Point 3 sticker ends -->
           </div>
         </div>
 
-        <!-- Route pages -->
-        <div class="flex flex-wrap b-4 mx-auto justify-center w-full">
+        <!-- Potential suggested route section -->
+        <!-- <div
+          class="flex flex-wrap b-4 mx-auto justify-center w-full textBgColour rounded-lg mt-4"
+        >
           <div class="w-full p-4">
-            <!-- List of routes - add new routes as a list item and they will automatically wrap themselves under the other routes -->
+            <h2 class="mx-auto text-center text-lg pb-2">
+              If you enjoyed this route, check out these routes next!
+            </h2>
+
             <ul class="post-list flex flex-wrap">
-              <!-- Route 1 -->
-              <!-- Routes have multiple links for redundancy -->
+
               <li
                 class="flex flex-row w-full pb-4 lg:pb-0 lg:w-1/2 lg:p-8 drop-shadow-md-custom"
                 onclick="window.location.href='./routes/route-1.html';"
@@ -377,7 +371,7 @@
                 </div>
               </li>
 
-              <!-- Route 2 -->
+
               <li
                 class="flex flex-row w-full pb-4 lg:pb-0 lg:w-1/2 lg:p-8 drop-shadow-md-custom"
                 onclick="window.location.href='./routes/route-2.html';"
@@ -401,7 +395,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
 
