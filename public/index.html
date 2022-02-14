@@ -4,264 +4,223 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Frome Valley Digital Trails</title>
     <link
       rel="icon"
       type="image/x-icon"
       href="./assets/FromeDigitalTrailsLogo.png"
     />
+    <!-- CSS links -->
+    <!-- Tailwind CSS - do not edit inside this file as Tailwind will compile and overwite it -->
     <link rel="stylesheet" href="./css/styles.css" class="rel" />
+    <!-- Custom CSS - add any custom css inside here -->
+    <link rel="stylesheet" href="./css/customstyles.css" class="rel" />
+
+    <!-- JavaScript - Alpine JS for inline JS -->
     <script
       defer
       src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
+
+    <!-- Link to svg icons "https://lineicons.com/icons/" -->
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" />
-
-    <style>
-      /* Webapp colour palette values */
-      :root {
-        --heroFooterColour: #537636;
-        --textBgColour: #dddcc0;
-        --buttonColour: #878532;
-      }
-      .heroFooterColour {
-        background-color: var(--heroFooterColour);
-      }
-      .textBgColour {
-        background-color: var(--textBgColour);
-      }
-      .buttonColour {
-        background-color: var(--buttonColour);
-      }
-
-      /* Custom drop shadow values for harder edges */
-      .drop-shadow-md-custom {
-        --tw-drop-shadow: drop-shadow(-2px 4px 3px rgb(0 0 0 / 0.4))
-          drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2));
-        filter: var(--tw-filter);
-      }
-      .drop-shadow-md-customLeft {
-        --tw-drop-shadow: drop-shadow(-4px 0px 3px rgb(0 0 0 / 0.4))
-          drop-shadow(-2px 0px 2px rgb(0 0 0 / 0.2));
-        filter: var(--tw-filter);
-      }
-
-      #howDoesItWork-modalInner {
-        display: table;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
-      }
-    </style>
   </head>
+
   <body>
-    <div class="min-h-screen flex flex-col">
-      <!-- Navigation bar -->
-      <div class="heroFooterColour" x-data="{ hideMob: true }">
-        <nav
-          class="flex items-center justify-between flex-wrap px-2 lg:p-2 m-auto"
-          style="max-width: 1200px"
-        >
-          <a class="flex items-center flex-shrink-0 text-white mr-6" href="/">
-            <img
-              src="./assets/FromeDigitalTrailsLogo.png"
-              class="h-16 lg:h-20"
-              alt="Winterbourne and Frome Valley Environmental Group Logo"
-            />
-          </a>
-          <!-- hamburger menu -->
-          <div class="block lg:hidden">
-            <button
-              class="flex items-center px-3 py-2 border rounded text-green-100 hover:text-white hover:border-white"
-              @click="hideMob = !hideMob"
-            >
-              <svg
-                class="fill-current h-6 w-6"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <title>Menu</title>
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-              </svg>
-            </button>
-          </div>
-          <div
-            class="pl-2 lg:pl-0 w-full block lg:flex-grow lg:flex lg:items-center lg:w-auto transition-all duration-500 ease-in-out overflow-hidden lg:max-h-80 max-h-0"
-            :class="{ 'max-h-0': hideMob, 'max-h-80': !hideMob }"
-          >
-            <div class="text-sm lg:flex-grow">
-              <a
-                href="https://winterbourne-environmental.uk/about-us"
-                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
-              >
-                About Us
-              </a>
-              <a
-                href="https://winterbourne-environmental.uk/blog"
-                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
-              >
-                Blog
-              </a>
-              <a
-                href="https://winterbourne-environmental.uk/events_list"
-                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
-              >
-                Events
-              </a>
-              <a
-                href="https://winterbourne-environmental.uk/walks"
-                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
-              >
-                Walks
-              </a>
-              <a
-                href="https://winterbourne-environmental.uk/projects"
-                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
-              >
-                Projects
-              </a>
-              <a
-                href="https://winterbourne-environmental.uk/links"
-                class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
-              >
-                Links
-              </a>
-            </div>
-            <div class="pb-3 lg:pb-0">
-              <a
-                href="/contact-us"
-                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-green-500 hover:bg-white mt-4 lg:mt-0"
-                >Contact Us</a
-              >
-            </div>
-          </div>
-        </nav>
-      </div>
-
-      <!-- Main content begins -->
-
-      <!-- Top Image (overlapped by main content) -->
-      <div
-        class="bg-center bg-no-repeat bg-cover py-24 md:py-36 lg:py-48 banner-image"
-        style="background-image: url(./assets/Picture1.png)"
-      ></div>
-
-      <!-- Main Content Container ()-->
-      <main
-        role="main"
-        class="container mx-auto flex-grow"
+    <!-- Navigation bar -->
+    <div class="heroFooterColour" x-data="{ hideMob: true }">
+      <nav
+        class="flex items-center justify-between flex-wrap px-2 lg:p-2 m-auto"
         style="max-width: 1200px"
       >
-        <!-- Inner Main Content Container -->
-        <div
-          class="flex flex-wrap mx-auto justify-center bg-white pt-8 -mt-8 md:-mt-16 lg:-mt-24 md:mx-10 rounded-t-3xl"
-        >
-          <!-- Page title "Frome Valley Digital Trails" -->
-          <h1 class="text-xl py-2 text-center lg:text-2xl">
-            Frome Valley Digital Trails
-          </h1>
-
-          <!-- Intro text -->
-          <div
-            class="w-full lg:mx-36 p-4 text-sm rounded-3xl textBgColour m-4 drop-shadow-md-custom"
+        <a class="flex items-center flex-shrink-0 text-white mr-6" href="/">
+          <img
+            src="./assets/FromeDigitalTrailsLogo.png"
+            class="h-16 lg:h-20"
+            alt="Winterbourne and Frome Valley Environmental Group Logo"
+          />
+        </a>
+        <!-- hamburger menu -->
+        <div class="block lg:hidden">
+          <button
+            class="flex items-center px-3 py-2 border rounded text-green-100 hover:text-white hover:border-white"
+            @click="hideMob = !hideMob"
           >
-            <div>
-              <p>
-                Frome Valley Digital Trails is a collection of curated walking
-                routes situated within the Frome Valley region (Winterbourne -
-                South Gloucestershire).
-                <br /><br />
-                QR codes have been placed along these routes to highlight some
-                of the area's amazing natural assets; wonderful trees,
-                interesting spots for bugs and butterflies and ancient
-                woodlands.
-                <br /><br />
-                The QR codes can be scanned with any smartphone to open webpages
-                containing information about these natural assets alongside an
-                optional quiz at the end of each point!
-                <br /><br />
-                Whether alone, with friends or family, we hope you enjoy
-                participating in these walks and exploring the breadth of flora
-                and fauna sitting on our doorstep.
+            <svg
+              class="fill-current h-6 w-6"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="pl-2 lg:pl-0 w-full block lg:flex-grow lg:flex lg:items-center lg:w-auto transition-all duration-500 ease-in-out overflow-hidden lg:max-h-80 max-h-0"
+          :class="{ 'max-h-0': hideMob, 'max-h-80': !hideMob }"
+        >
+          <div class="text-sm lg:flex-grow">
+            <a
+              href="https://winterbourne-environmental.uk/about-us"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              About Us
+            </a>
+            <a
+              href="https://winterbourne-environmental.uk/blog"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              Blog
+            </a>
+            <a
+              href="https://winterbourne-environmental.uk/events_list"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              Events
+            </a>
+            <a
+              href="https://winterbourne-environmental.uk/walks"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              Walks
+            </a>
+            <a
+              href="https://winterbourne-environmental.uk/projects"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              Projects
+            </a>
+            <a
+              href="https://winterbourne-environmental.uk/links"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              Links
+            </a>
+          </div>
+          <div class="pb-3 lg:pb-0">
+            <a
+              href="/contact-us"
+              class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-green-500 hover:bg-white mt-4 lg:mt-0"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Main content begins -->
+
+    <!-- Top Image (overlapped by main content) -->
+    <div
+      class="bg-center bg-no-repeat bg-cover py-24 md:py-36 lg:py-48 banner-image"
+      style="background-image: url(./assets/Picture1.png)"
+    ></div>
+
+    <!-- Main Content Container ()-->
+    <main
+      role="main"
+      class="container mx-auto flex-grow"
+      style="max-width: 1200px"
+    >
+      <!-- Inner Main Content Container -->
+      <div
+        class="flex flex-wrap mx-auto justify-center bg-white pt-8 -mt-8 md:-mt-16 lg:-mt-24 md:mx-10 rounded-t-3xl"
+      >
+        <!-- Page title "Frome Valley Digital Trails" -->
+        <h1 class="text-xl py-2 text-center lg:text-2xl">
+          Frome Valley Digital Trails
+        </h1>
+
+        <!-- Intro text -->
+        <div
+          class="w-full lg:mx-36 p-4 text-sm rounded-3xl textBgColour m-4 drop-shadow-md-custom"
+        >
+          <div>
+            <p>
+              Frome Valley Digital Trails is a collection of curated walking
+              routes situated within the Frome Valley region (Winterbourne -
+              South Gloucestershire).
+              <br /><br />
+              QR codes have been placed along these routes to highlight some of
+              the area's amazing natural assets; wonderful trees, interesting
+              spots for bugs and butterflies and ancient woodlands.
+              <br /><br />
+              The QR codes can be scanned with any smartphone to open webpages
+              containing information about these natural assets alongside an
+              optional quiz at the end of each point!
+              <br /><br />
+              Whether alone, with friends or family, we hope you enjoy
+              participating in these walks and exploring the breadth of flora
+              and fauna sitting on our doorstep.
+            </p>
+
+            <p class="pb-4"></p>
+          </div>
+        </div>
+
+        <!-- How does it work button + modal -->
+        <div class="py-4 lg:py-2 lg:pt-8 text-center w-full">
+          <!-- Button -->
+          <button
+            class="w-60 buttonColour hover:opacity-75 p-4 rounded-full container text-white text-xl drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
+            id="howDoesItWork-button"
+          >
+            <i class="lni lni-question-circle"></i> How does it work?
+          </button>
+          <!-- Modal Container (greys out background) -->
+          <div
+            id="howDoesItWork-modal"
+            class="hidden fixed z-10 pt-14 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50"
+          >
+            <!-- Modal Content Lightbox -->
+            <div
+              id="howDoesItWork-modalInner"
+              class="textBgColour my-auto mx-2 md:mx-auto p-5 md:w-96 rounded-md"
+            >
+              <ul>
+                <li class="text-left">
+                  <i class="lni lni-pointer-top"></i> Pick a route
+                </li>
+                <li class="text-left">
+                  <i class="lni lni-camera"></i> Scan QR codes with your phone's
+                  camera app to learn about the area
+                </li>
+                <li class="text-left">
+                  <i class="lni lni-question-circle"></i> Answer the optional
+                  quiz to earn a sticker
+                </li>
+                <li class="text-left">
+                  <i class="lni lni-smile"></i> Enjoy your walk!
+                </li>
+              </ul>
+              <p class="text-left pt-4">
+                If you do not wish to scan the QR codes, you can still access
+                the information by opening the points of interest within the
+                route pages.
               </p>
 
-              <p class="pb-4"></p>
-            </div>
-          </div>
-
-          <!-- How does it work button -->
-          <div class="py-4 lg:py-2 lg:pt-8 text-center w-full">
-            <button
-              class="w-60 buttonColour hover:opacity-75 p-4 rounded-full container text-white text-xl drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
-              id="howDoesItWork-button"
-            >
-              <i class="lni lni-question-circle"></i> How does it work?
-            </button>
-            <!-- Modal content -->
-            <!-- modal background -->
-            <div
-              id="howDoesItWork-modal"
-              class="hidden fixed z-10 pt-14 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50"
-            >
-              <!-- modal inner -->
-              <div
-                id="howDoesItWork-modalInner"
-                class="textBgColour my-auto mx-2 md:mx-auto p-5 md:w-96 rounded-md"
+              <p class="text-left pt-4">
+                You can also read the written directions by opening them with
+                the "Route Directions" buttons
+              </p>
+              <button
+                id="howDoesItWork-close"
+                class="cursor-pointer hover:opacity-75 buttonColour p-1 px-4 mt-4 w-8/12 rounded-md text-white drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
               >
-                <!-- <span
-                  id="howDoesItWork-close"
-                  class="float-right text-3xl cursor-pointer hover:opacity-50"
-                  >&times;</span
-                > -->
-
-                <ul>
-                  <li class="text-left">
-                    <i class="lni lni-pointer-top"></i> Pick a route
-                  </li>
-                  <li class="text-left">
-                    <i class="lni lni-camera"></i> Scan QR codes with your
-                    phone's camera app to learn about the area
-                  </li>
-                  <li class="text-left">
-                    <i class="lni lni-question-circle"></i> Answer the optional
-                    quiz to earn a sticker
-                  </li>
-                  <li class="text-left">
-                    <i class="lni lni-smile"></i> Enjoy your walk!
-                  </li>
-                </ul>
-                <p class="text-left pt-4">
-                  If you do not wish to scan the QR codes, you can still access
-                  the information by opening the points of interest within the
-                  route pages.
-                </p>
-
-                <p class="text-left pt-4">
-                  You can also read the written directions by opening them with
-                  the "Route Directions" buttons
-                </p>
-                <button
-                  id="howDoesItWork-close"
-                  class="cursor-pointer hover:opacity-75 buttonColour p-1 px-4 mt-4 w-8/12 rounded-md text-white drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
-                >
-                  Close
-                </button>
-              </div>
+                Close
+              </button>
             </div>
           </div>
+        </div>
 
-          <!-- Route pages -->
-          <div class="flex flex-wrap b-4 mx-auto justify-center w-full">
-            <div class="w-full p-4">
-              <ul class="post-list flex flex-wrap">
-                <!-- Route x - image button example-->
-                <!-- <li
+        <!-- Route pages -->
+        <div class="flex flex-wrap b-4 mx-auto justify-center w-full">
+          <div class="w-full p-4">
+            <!-- List of routes - add new routes as a list item and they will automatically wrap themselves under the other routes -->
+            <ul class="post-list flex flex-wrap">
+              <!-- Route x - image button example-->
+              <!-- <li
                     class="w-full pb-4 lg:pb-0 lg:w-1/2 lg:p-8 drop-shadow-md-custom"
                   >
                     <button
@@ -305,111 +264,111 @@
                     </button>
                   </li> -->
 
-                <!-- Route 1 -->
-                <li
-                  class="flex flex-row w-full pb-4 lg:pb-0 lg:w-1/2 lg:p-8 drop-shadow-md-custom"
-                  onclick="window.location.href='./routes/route-4.html';"
+              <!-- Route 1 -->
+              <!-- Routes have multiple links for redundancy -->
+              <li
+                class="flex flex-row w-full pb-4 lg:pb-0 lg:w-1/2 lg:p-8 drop-shadow-md-custom"
+                onclick="window.location.href='./routes/route-1.html';"
+              >
+                <div
+                  class="hover:cursor-pointer textBgColour w-full rounded-lg flex flex-row"
+                  href="./routes/route-1.html"
                 >
-                  <div
-                    class="hover:cursor-pointer textBgColour w-full rounded-lg flex flex-row"
-                    href="./routes/route-1.html"
-                  >
-                    <div class="p-4 md:p-4 text-left w-9/12">
-                      <h3 class="font-bold">Hambrook Memorial Walk</h3>
-                      <p class="excerpt text-left">
-                        A walk with rivers and trees.
-                      </p>
-                    </div>
-                    <button
-                      class="buttonColour hover:opacity-75 w-3/12 text-white rounded-lg drop-shadow-md-customLeft hover:scale-110 duration-300 transition ease-in-out"
-                    >
-                      <a class="p-6" href="./routes/route-3.html">Open</a>
-                    </button>
+                  <div class="p-4 md:p-4 text-left w-9/12">
+                    <h3 class="font-bold">Hambrook Memorial Walk</h3>
+                    <p class="excerpt text-left">
+                      A walk with rivers and trees.
+                    </p>
                   </div>
-                </li>
+                  <button
+                    class="buttonColour hover:opacity-75 w-3/12 text-white rounded-lg drop-shadow-md-customLeft hover:scale-110 duration-300 transition ease-in-out"
+                  >
+                    <a class="p-6" href="./routes/route-1.html">Open</a>
+                  </button>
+                </div>
+              </li>
 
-                <!-- Route 2 -->
-                <li
-                  class="flex flex-row w-full pb-4 lg:pb-0 lg:w-1/2 lg:p-8 drop-shadow-md-custom"
-                  onclick="window.location.href='./routes/route-4.html';"
+              <!-- Route 2 -->
+              <li
+                class="flex flex-row w-full pb-4 lg:pb-0 lg:w-1/2 lg:p-8 drop-shadow-md-custom"
+                onclick="window.location.href='./routes/route-2.html';"
+              >
+                <div
+                  class="hover:cursor-pointer textBgColour w-full rounded-lg flex flex-row"
+                  href="./routes/route-2.html"
                 >
-                  <div
-                    class="hover:cursor-pointer textBgColour w-full rounded-lg flex flex-row"
-                    href="./routes/route-1.html"
-                  >
-                    <div class="p-4 md:p-4 text-left w-9/12">
-                      <h3 class="font-bold">Second Walking Route</h3>
-                      <p class="excerpt text-left">
-                        A walk with rivers and trees.
-                      </p>
-                    </div>
-                    <button
-                      class="buttonColour hover:opacity-75 w-3/12 text-white rounded-lg drop-shadow-md-customLeft hover:scale-110 duration-300 transition ease-in-out"
-                    >
-                      <a class="p-6" href="./routes/route-3.html">Open</a>
-                    </button>
+                  <div class="p-4 md:p-4 text-left w-9/12">
+                    <h3 class="font-bold">Second Walking Route</h3>
+                    <p class="excerpt text-left">
+                      A walk with rivers and trees.
+                    </p>
                   </div>
-                </li>
-              </ul>
-            </div>
+                  <button
+                    class="buttonColour hover:opacity-75 w-3/12 text-white rounded-lg drop-shadow-md-customLeft hover:scale-110 duration-300 transition ease-in-out"
+                  >
+                    <a class="p-6" href="./routes/route-2.html">Open</a>
+                  </button>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-      </main>
+      </div>
+    </main>
 
-      <!-- Footer (social buttons) -->
-      <footer class="heroFooterColour mt-10 text-white p-4">
-        <div class="m-auto" style="max-width: 1200px">
-          <div class="flex flex-wrap justify-center py-4 text-center">
-            <a class="px-2 invert-svg" href="https://twitter.com/weg_uk">
-              <i
-                class="lni lni-twitter text-white w-12 m-auto"
-                style="font-size: 2rem"
-              ></i>
-              <!-- <img
+    <!-- Footer (social buttons) -->
+    <footer class="heroFooterColour mt-10 text-white p-4">
+      <div class="m-auto" style="max-width: 1200px">
+        <div class="flex flex-wrap justify-center py-4 text-center">
+          <a class="px-2 invert-svg" href="https://twitter.com/weg_uk">
+            <i
+              class="lni lni-twitter text-white w-12 m-auto"
+              style="font-size: 2rem"
+            ></i>
+            <!-- <img
                 alt="Twitter Logo"
                 src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/icons/twitter.svg"
                 class="w-12 fr-fic fr-dii"
             /> -->
-            </a>
-            <a
-              class="px-2 invert-svg"
-              href="https://www.facebook.com/groups/WinterbourneEnvironment"
-            >
-              <i
-                class="lni lni-facebook text-white w-12 m-auto"
-                style="font-size: 2rem"
-              ></i>
-              <!-- <img
+          </a>
+          <a
+            class="px-2 invert-svg"
+            href="https://www.facebook.com/groups/WinterbourneEnvironment"
+          >
+            <i
+              class="lni lni-facebook text-white w-12 m-auto"
+              style="font-size: 2rem"
+            ></i>
+            <!-- <img
                 alt="Facebook Logo"
                 src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/icons/facebook.svg"
                 class="w-12 fr-fic fr-dii"
             /> -->
-            </a>
-            <a
-              class="px-2 invert-svg"
-              href="https://www.youtube.com/channel/UCgrzeWRa95dt_M7vhHtRN8At"
-            >
-              <i
-                class="lni lni-youtube text-white w-12 m-auto"
-                style="font-size: 2rem"
-              ></i>
-              <!-- <img
+          </a>
+          <a
+            class="px-2 invert-svg"
+            href="https://www.youtube.com/channel/UCgrzeWRa95dt_M7vhHtRN8At"
+          >
+            <i
+              class="lni lni-youtube text-white w-12 m-auto"
+              style="font-size: 2rem"
+            ></i>
+            <!-- <img
                 alt="Youtube Logo"
                 src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/icons/youtube.svg"
                 class="w-12 fr-fic fr-dii"
             /> -->
-            </a>
-          </div>
-          <div class="text-center text-white opacity-80 text-sm">
-            © Winterbourne and Frome Valley Environmental Group 2022
-            <span class="px-2">|</span>
-            <a href="/privacy-policy">Privacy Policy</a>
-            <span class="px-2">|</span>
-            <a href="/cookies-policy">Cookies Policy</a>
-          </div>
+          </a>
         </div>
-      </footer>
-    </div>
+        <div class="text-center text-white opacity-80 text-sm">
+          © Winterbourne and Frome Valley Environmental Group 2022
+          <span class="px-2">|</span>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <span class="px-2">|</span>
+          <a href="/cookies-policy">Cookies Policy</a>
+        </div>
+      </div>
+    </footer>
 
     <!-- How does it work modal box -->
     <script>

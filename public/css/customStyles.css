@@ -1,0 +1,40 @@
+/* Webapp colour palette values */
+:root {
+  --heroFooterColour: #537636;
+  --textBgColour: #dddcc0;
+  --buttonColour: #878532;
+}
+.heroFooterColour {
+  background-color: var(--heroFooterColour);
+}
+.textBgColour {
+  background-color: var(--textBgColour);
+}
+.buttonColour {
+  background-color: var(--buttonColour);
+}
+
+/* Custom drop shadow values for harder edges */
+.drop-shadow-md-custom {
+  --tw-drop-shadow: drop-shadow(-2px 4px 3px rgb(0 0 0 / 0.4))
+    drop-shadow(-1px 2px 2px rgb(0 0 0 / 0.2));
+  filter: var(--tw-filter);
+}
+.drop-shadow-md-customLeft {
+  --tw-drop-shadow: drop-shadow(-4px 0px 3px rgb(0 0 0 / 0.4))
+    drop-shadow(-2px 0px 2px rgb(0 0 0 / 0.2));
+  filter: var(--tw-filter);
+}
+
+/* Centers the tutorial modal window */
+#howDoesItWork-modalInner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
