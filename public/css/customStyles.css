@@ -3,6 +3,7 @@
   --heroFooterColour: #537636;
   --textBgColour: #dddcc0;
   --buttonColour: #878532;
+  --hoverButtonColour: #b9b861;
 }
 .heroFooterColour {
   background-color: var(--heroFooterColour);
@@ -12,6 +13,9 @@
 }
 .buttonColour {
   background-color: var(--buttonColour);
+}
+.buttonColour:hover {
+  background-color: var(--hoverButtonColour);
 }
 
 /* Custom drop shadow values for harder edges */
