@@ -8,13 +8,13 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="./assets/FromeDigitalTrailsLogo.png"
+      href="../assets/FromeDigitalTrailsLogo.png"
     />
     <!-- CSS links -->
     <!-- Tailwind CSS - do not edit inside this file as Tailwind will compile and overwite it -->
-    <link rel="stylesheet" href="./css/styles.css" class="rel" />
+    <link rel="stylesheet" href="../css/styles.css" class="rel" />
     <!-- Custom CSS - add any custom css inside here -->
-    <link rel="stylesheet" href="./css/customstyles.css" class="rel" />
+    <link rel="stylesheet" href="../css/customstyles.css" class="rel" />
 
     <!-- JavaScript - Alpine JS for inline JS -->
     <script
@@ -35,7 +35,7 @@
       >
         <a class="flex items-center flex-shrink-0 text-white mr-6" href="/">
           <img
-            src="./assets/FromeDigitalTrailsLogo.png"
+            src="../assets/FromeDigitalTrailsLogo.png"
             class="h-16 lg:h-20"
             alt="Winterbourne and Frome Valley Environmental Group Logo"
           />
@@ -114,7 +114,7 @@
     <!-- Top Image (overlapped by main content) -->
     <div
       class="bg-center bg-no-repeat bg-cover py-24 md:py-36 lg:py-48 banner-image"
-      style="background-image: url(./assets/Picture1.png)"
+      style="background-image: url(../assets/Picture1.png)"
     ></div>
 
     <!-- Main Content Container ()-->
@@ -129,35 +129,58 @@
       >
         <!-- Page title "Frome Valley Digital Trails" -->
         <h1 class="text-xl py-2 text-center lg:text-2xl">
-          Frome Valley Digital Trails
+          Hambrook Memorial Trail
         </h1>
 
         <!-- Intro text -->
         <div
           class="w-full lg:mx-36 p-4 text-sm rounded-3xl textBgColour m-4 drop-shadow-md-custom"
         >
+          <div class="flex flex-row w-1/2 mx-auto pb-2">
+            <i class="flex lni lni-pointer-top w-4/12 text-center m-auto"></i>
+            <p class="flex w-4/12">Categories:</p>
+            <p class="flex w-4/12">Something</p>
+          </div>
+          <div class="flex flex-row w-1/2 mx-auto pb-2 text-center m-auto">
+            <i class="flex lni lni-pointer-top w-4/12"></i>
+            <p class="flex w-4/12">Distance:</p>
+            <p class="flex w-4/12">X Miles</p>
+          </div>
+          <div class="flex flex-row w-1/2 mx-auto pb-2 text-center m-auto">
+            <i class="flex lni lni-pointer-top w-4/12"></i>
+            <p class="flex w-4/12">Difficulty:</p>
+            <p class="flex w-4/12">Easy</p>
+          </div>
+          <div class="flex flex-row w-1/2 mx-auto pb-2 text-center m-auto">
+            <i class="flex lni lni-pointer-top w-4/12"></i>
+            <p class="flex w-4/12">Start At:</p>
+            <p class="flex w-4/12">Location</p>
+          </div>
+
+          <!-- Try and put this on the left of the categories/distance/difficulty thing -->
+          <!-- That way if all the things are completed, it shows a special sticker -->
+          <div class="flex flex-row w-1/4 m-auto">
+            <image src="../assets/logo.png"></image>
+          </div>
+
           <div>
             <p>
-              Frome Valley Digital Trails is a collection of curated walking
-              routes situated within the Frome Valley region (Winterbourne -
-              South Gloucestershire).
+              This route is mostly off-road and uses some rarely used footpaths
+              to see some areas of the local countryside.
               <br /><br />
-              QR codes have been placed along these routes to highlight some of
-              the area's amazing natural assets; wonderful trees, interesting
-              spots for bugs and butterflies and ancient woodlands.
-              <br /><br />
-              The QR codes can be scanned with any smartphone to open webpages
-              containing information about these natural assets alongside an
-              optional quiz at the end of each point!
-              <br /><br />
-              Whether alone, with friends or family, we hope you enjoy
-              participating in these walks and exploring the breadth of flora
-              and fauna sitting on our doorstep.
+              While you are on Whiteshill common, take some time to visit the
+              war memorial, look for interesting fungi on the common and visit
+              the wild flower meadow planted by Winterbourne and Frome Valley
+              Environmental Group to the south of Worrels Lane.
             </p>
-
-            <p class="pb-4"></p>
           </div>
         </div>
+
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1WyZy-LVaXdsGLXteW5HgMTFDcUqmhMUc&ehbc=2E312F"
+          height="360"
+          class="w-full lg:mx-36 p-4 text-sm rounded-3xl"
+        ></iframe>
 
         <!-- How does it work button + modal -->
         <div class="py-4 lg:py-2 lg:pt-8 text-center w-full">
@@ -268,11 +291,11 @@
               <!-- Routes have multiple links for redundancy -->
               <li
                 class="flex flex-row w-full pb-4 lg:pb-0 lg:w-1/2 lg:p-8 drop-shadow-md-custom"
-                onclick="window.location.href='./routes/hambrookMemorialRoute.html';"
+                onclick="window.location.href='./routes/route-1.html';"
               >
                 <div
                   class="hover:cursor-pointer textBgColour w-full rounded-lg flex flex-row"
-                  href="./routes/hambrookMemorialRoute.html"
+                  href="./routes/route-1.html"
                 >
                   <div class="p-4 md:p-4 text-left w-9/12">
                     <h3 class="font-bold">Hambrook Memorial Walk</h3>
@@ -283,9 +306,7 @@
                   <button
                     class="buttonColour hover:opacity-75 w-3/12 text-white rounded-lg drop-shadow-md-customLeft hover:scale-110 duration-300 transition ease-in-out"
                   >
-                    <a class="p-6" href="./routes/hambrookMemorialRoute.html"
-                      >Open</a
-                    >
+                    <a class="p-6" href="./routes/route-1.html">Open</a>
                   </button>
                 </div>
               </li>
