@@ -26,7 +26,7 @@
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" />
   </head>
 
-  <body>
+  <body onload="hambrookQuizPoints()">
     <!-- Navigation bar -->
     <div class="heroFooterColour" x-data="{ hideMob: true }">
       <nav
@@ -292,7 +292,8 @@
               <!-- Inner Sticker container -->
               <div class="w-1/4 sm:w-1/2 m-auto">
                 <div
-                  class="m-auto h-24 w-24 bg-white rounded-full collectableSticker-1"
+                  id="hambrook-sticker-yShapedTree"
+                  class="m-auto h-24 w-24 bg-white rounded-full"
                 ></div>
               </div>
             </div>
@@ -311,9 +312,7 @@
               </div>
               <!-- Inner Sticker container -->
               <div class="w-1/4 sm:w-1/2 m-auto">
-                <div
-                  class="m-auto h-24 w-24 bg-white rounded-full collectableSticker-2"
-                ></div>
+                <div class="m-auto h-24 w-24 bg-white rounded-full"></div>
               </div>
             </div>
             <!-- Point 2 sticker ends -->
@@ -491,6 +490,19 @@
           dropdown.classList.toggle("flex");
         });
       });
+    </script>
+    <script>
+      hambrookQuizPoints = () => {
+        const hambrookYShapedTree = document.getElementById(
+          "hambrook-sticker-yShapedTree"
+        );
+
+        if (localStorage.getItem("hambrook-yShapedTree-correct") == "1") {
+          hambrookYShapedTree.classList.add("collectableSticker-2");
+        } else {
+          hambrookYShapedTree.classList.remove("collectableSticker-2");
+        }
+      };
     </script>
     <script
       type="module"
