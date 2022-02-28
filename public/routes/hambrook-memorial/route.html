@@ -139,67 +139,12 @@
           </h3>
         </div>
 
-        <!-- How does it work button + modal -->
-        <div class="py-4 lg:py-2 lg:pt-8 text-center w-full">
-          <!-- Button -->
-          <button
-            class="w-60 buttonColour p-4 rounded-full container text-white text-xl drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
-            id="howDoesItWork-button"
-          >
-            <i class="lni lni-question-circle"></i> How does it work?
-          </button>
-          <!-- Modal Container (greys out background) -->
-          <div
-            id="howDoesItWork-modal"
-            class="hidden fixed z-10 pt-14 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50"
-          >
-            <!-- Modal Content Lightbox -->
-            <div
-              id="howDoesItWork-modalInner"
-              class="textBgColour my-auto mx-2 md:mx-auto p-5 md:w-96 rounded-md"
-            >
-              <ul>
-                <li class="text-left">
-                  <i class="lni lni-pointer-top"></i> Pick a route
-                </li>
-                <li class="text-left">
-                  <i class="lni lni-camera"></i> Scan QR codes with your phone's
-                  camera app to learn about the area
-                </li>
-                <li class="text-left">
-                  <i class="lni lni-question-circle"></i> Answer the optional
-                  quiz to earn a sticker
-                </li>
-                <li class="text-left">
-                  <i class="lni lni-smile"></i> Enjoy your walk!
-                </li>
-              </ul>
-              <p class="text-left pt-4">
-                If you do not wish to scan the QR codes, you can still access
-                the information by opening the points of interest within the
-                route pages.
-              </p>
-
-              <p class="text-left pt-4">
-                You can also read the written directions by opening them with
-                the "Route Directions" buttons
-              </p>
-              <button
-                id="howDoesItWork-close"
-                class="cursor-pointer buttonColour p-1 px-4 mt-4 w-8/12 rounded-md text-white drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-
         <!-- Intro text -->
         <div class="w-full lg:mx-36 p-4 text-sm rounded-3xl textBgColour m-4">
           <!-- Categories and Sticker container -->
-          <div class="block sm:flex sm:flex-row md:w-3/4 mx-auto pb-2">
+          <div class="block sm:flex sm:flex-col md:w-3/4 mx-auto pb-2">
             <!-- Inner Categories container -->
-            <div class="w-full md:w-1/2">
+            <div class="w-full md:w-1/2 m-auto">
               <div class="flex flex-row w-full mx-auto pb-2">
                 <i
                   class="flex lni lni-grid-alt w-4/12 text-center m-auto scale-150"
@@ -231,12 +176,12 @@
             </div>
 
             <!-- Inner Sticker container -->
-            <div class="w-full sm:w-1/2 m-auto">
+            <!-- <div class="w-full sm:w-1/2 m-auto py-4">
               <image
                 class="m-auto max-h-24"
                 src="../../assets/logo.png"
               ></image>
-            </div>
+            </div> -->
           </div>
 
           <!-- Trail Information -->
@@ -253,10 +198,71 @@
           </div>
         </div>
 
+        <!-- How does it work button + modal -->
+        <div class="py-4 text-center w-full">
+          <!-- Button -->
+          <button
+            class="w-60 buttonColour p-4 rounded-full container text-white text-xl drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
+            id="howDoesItWork-button"
+          >
+            <i class="lni lni-question-circle"></i> How does it work?
+          </button>
+          <!-- Modal Container (greys out background) -->
+          <div
+            id="howDoesItWork-modal"
+            class="hidden fixed z-10 pt-14 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50"
+          >
+            <!-- Modal Content Lightbox -->
+            <div
+              id="howDoesItWork-modalInner"
+              class="textBgColour my-auto mx-2 md:mx-auto p-5 md:w-96 rounded-md"
+            >
+              <ul class="text-lg">
+                <li class="text-left">
+                  <i class="lni lni-pointer-top"></i> Pick a route
+                </li>
+                <li class="text-left py-2">
+                  <i class="lni lni-camera"></i> Scan QR codes with your phone's
+                  camera app to learn about the area
+                </li>
+                <li class="text-left">
+                  <i class="lni lni-question-circle"></i> Answer the optional
+                  quiz to earn a sticker at each point - collect them all to
+                  complete the route!
+                </li>
+                <li class="text-left py-2">
+                  <i class="lni lni-smile"></i> Enjoy your walk!
+                </li>
+              </ul>
+              <p class="text-left pt-4">
+                If you do not wish to scan the QR codes, you can still access
+                the information by opening the points of interest within the
+                route pages.
+              </p>
+
+              <p class="text-left pt-4">
+                You can also read the written directions by opening them with
+                the "Route Directions" buttons
+              </p>
+              <button
+                id="howDoesItWork-close"
+                class="cursor-pointer buttonColour p-1 px-4 mt-4 w-8/12 rounded-md text-white drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+
         <!-- Route Google Maps embed -->
-        <iframe
+        <!-- <iframe
           src="https://www.google.com/maps/d/embed?mid=1WyZy-LVaXdsGLXteW5HgMTFDcUqmhMUc&ehbc=2E312F"
           height="500"
+          class="w-full lg:mx-36 p-4 text-sm rounded-3xl"
+        ></iframe> -->
+        <iframe
+          src="https://www.google.com/maps/d/u/0/embed?mid=1dKY1Y7za7OD5wJw7y5yplthGOtH0keuf&ehbc=2E312F"
+          height="600"
           class="w-full lg:mx-36 p-4 text-sm rounded-3xl"
         ></iframe>
 

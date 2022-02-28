@@ -4833,6 +4833,10 @@ textarea.form-control.is-invalid {
     flex-direction: row;
   }
 
+  .sm\:flex-col {
+    flex-direction: column;
+  }
+
   .sm\:p-8 {
     padding: 2rem;
   }
