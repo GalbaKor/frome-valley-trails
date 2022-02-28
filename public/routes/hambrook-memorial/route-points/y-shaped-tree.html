@@ -322,14 +322,13 @@
               </button>
             </div>
           </div>
-
-          <!-- <div id="quiz" class="py-4"></div>
-          <button id="submit">Get Results</button> -->
         </div>
 
-        <div id="results"></div>
+        <!-- Quiz modals (hidden initially) -->
+
+        <!-- Correct Modal -->
         <div
-          id="quiz-modal"
+          id="quiz-correct-modal"
           class="hidden fixed z-10 pt-14 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50"
         >
           <!-- Modal Content Lightbox -->
@@ -337,36 +336,50 @@
             id="quiz-modalInner"
             class="textBgColour my-auto mx-2 md:mx-auto p-5 md:w-96 rounded-md"
           >
-            <ul>
-              <li class="text-left">
-                <i class="lni lni-pointer-top"></i> Pick a route
-              </li>
-              <li class="text-left">
-                <i class="lni lni-camera"></i> Scan QR codes with your phone's
-                camera app to learn about the area
-              </li>
-              <li class="text-left">
-                <i class="lni lni-question-circle"></i> Answer the optional quiz
-                to earn a sticker
-              </li>
-              <li class="text-left">
-                <i class="lni lni-smile"></i> Enjoy your walk!
-              </li>
-            </ul>
-            <p class="text-left pt-4">
-              If you do not wish to scan the QR codes, you can still access the
-              information by opening the points of interest within the route
-              pages.
-            </p>
+            <h1 class="text-2xl text-center">Correct!</h1>
+            <p class="text-left p-4">The Y-Shaped Tree is covered in ivy.</p>
+
+            <!-- Sticker -->
+            <div
+              class="m-auto h-24 w-24 bg-white rounded-full collectableSticker-2"
+            ></div>
 
             <p class="text-left pt-4">
-              You can also read the written directions by opening them with the
-              "Route Directions" buttons
+              Here is your sticker. Keep going and complete the other points to
+              collect them all!
             </p>
+
+            <!-- Close button -->
             <div class="text-center">
               <button
-                id="quiz-modal-close"
-                class="cursor-pointer buttonColour p-1 px-4 mt-4 w-8/12 rounded-md text-white drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out"
+                class="cursor-pointer buttonColour p-1 px-4 mt-4 w-8/12 rounded-md text-white drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out quiz-modal-close"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Incorrect Modal -->
+        <div
+          id="quiz-incorrect-modal"
+          class="hidden fixed z-10 pt-14 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50"
+        >
+          <!-- Modal Content Lightbox -->
+          <div
+            id="quiz-modalInner"
+            class="textBgColour my-auto mx-2 md:mx-auto p-5 md:w-96 rounded-md"
+          >
+            <h1 class="text-2xl text-center">Incorrect!</h1>
+            <p class="text-left p-4">
+              Re-read the information and have a look at the tree to find the
+              answer.
+            </p>
+
+            <!-- Close button -->
+            <div class="text-center">
+              <button
+                class="cursor-pointer buttonColour p-1 px-4 mt-4 w-8/12 rounded-md text-white drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out quiz-modal-close"
               >
                 Close
               </button>
@@ -433,159 +446,47 @@
     <!-- TailWind Elements module - allows for easy to use carousel -->
     <script src="../../../js/tw-elements-index.min.js"></script>
 
-    <!-- Quiz Script -->
-    <!-- <script>
-      var myQuestions = [
-        {
-          question: "What is 10/2?",
-          answers: {
-            a: "3",
-            b: "5",
-            c: "115",
-          },
-          correctAnswer: "b",
-        },
-        {
-          question: "What is 30/3?",
-          answers: {
-            a: "3",
-            b: "5",
-            c: "10",
-          },
-          correctAnswer: "c",
-        },
-      ];
-
-      var quizContainer = document.getElementById("quiz");
-      var resultsContainer = document.getElementById("results");
-      var submitButton = document.getElementById("submit");
-
-      generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
-
-      function generateQuiz(
-        questions,
-        quizContainer,
-        resultsContainer,
-        submitButton
-      ) {
-        function showQuestions(questions, quizContainer) {
-          // we'll need a place to store the output and the answer choices
-          var output = [];
-          var answers;
-
-          // for each question...
-          for (var i = 0; i < questions.length; i++) {
-            // first reset the list of answers
-            answers = [];
-
-            // for each available answer...
-            for (letter in questions[i].answers) {
-              // ...add an html radio button
-              answers.push(
-                "<label>" +
-                  '<input type="radio" name="question' +
-                  i +
-                  '" value="' +
-                  letter +
-                  '">' +
-                  letter +
-                  ": " +
-                  questions[i].answers[letter] +
-                  "</label>"
-              );
-            }
-
-            // add this question and its answers to the output
-            output.push(
-              '<div class="question">' +
-                questions[i].question +
-                "</div>" +
-                '<div class="answers">' +
-                answers.join("") +
-                "</div>"
-            );
-          }
-
-          // finally combine our output list into one string of html and put it on the page
-          quizContainer.innerHTML = output.join("");
-        }
-
-        function showResults(questions, quizContainer, resultsContainer) {
-          // gather answer containers from our quiz
-          var answerContainers = quizContainer.querySelectorAll(".answers");
-
-          // keep track of user's answers
-          var userAnswer = "";
-          var numCorrect = 0;
-
-          // for each question...
-          for (var i = 0; i < questions.length; i++) {
-            // find selected answer
-            userAnswer = (
-              answerContainers[i].querySelector(
-                "input[name=question" + i + "]:checked"
-              ) || {}
-            ).value;
-
-            // if answer is correct
-            if (userAnswer === questions[i].correctAnswer) {
-              // add to the number of correct answers
-              numCorrect++;
-
-              // color the answers green
-              answerContainers[i].style.color = "lightgreen";
-            }
-            // if answer is wrong or blank
-            else {
-              // color the answers red
-              answerContainers[i].style.color = "red";
-            }
-          }
-
-          // show number of correct answers out of total
-          resultsContainer.innerHTML =
-            numCorrect + " out of " + questions.length;
-        }
-
-        // show questions right away
-        showQuestions(questions, quizContainer);
-
-        // on submit, show results
-        submitButton.onclick = function () {
-          showResults(questions, quizContainer, resultsContainer);
-        };
-      }
-    </script> -->
-
     <!-- Custom Quiz Script-->
     <script>
-      const quizModal = document.getElementById("quiz-modal");
+      const quizCorrectModal = document.getElementById("quiz-correct-modal");
+      const quizIncorrectModal = document.getElementById(
+        "quiz-incorrect-modal"
+      );
       const quizButton = document.getElementById("show-results-button");
-      const quizClose = document.getElementById("quiz-modal-close");
+      const quizClose = document.getElementsByClassName("quiz-modal-close");
 
       const correct = document.getElementById("hambrook-yShapedTree-answers-A");
 
+      // If the correct option is chosen, the "correct" modal is displayed, otherwise an "incorrect" modal is displayed
       quizButton.onclick = function () {
         if (correct.checked) {
           localStorage.setItem("hambrook-yShapedTree-correct", 1);
-          quizModal.style.display = "block";
+          quizCorrectModal.style.display = "block";
           console.log("correct");
           console.log(localStorage.getItem("hambrook-yShapedTree-correct"));
         } else {
           localStorage.removeItem("hambrook-yShapedTree-correct");
           console.log("incorrect");
+          quizIncorrectModal.style.display = "block";
         }
       };
 
-      // When the user clicks on the "x", close the modal
-      quizClose.onclick = function () {
-        quizModal.style.display = "none";
+      // When the user clicks on the close button, hide the modals
+      quizClose[0].onclick = function () {
+        quizCorrectModal.style.display = "none";
+      };
+      quizClose[1].onclick = function () {
+        quizIncorrectModal.style.display = "none";
       };
 
-      // When the user clicks anywhere outside of the modal, close it
+      // When the user clicks anywhere outside of either of the two modals, close them
       window.onclick = function (event) {
-        if (event.target == quizModal) {
-          quizModal.style.display = "none";
+        if (event.target == quizCorrectModal) {
+          quizCorrectModal.style.display = "none";
+        } else {
+          if (event.target == quizIncorrectModal) {
+            quizIncorrectModal.style.display = "none";
+          }
         }
       };
     </script>
