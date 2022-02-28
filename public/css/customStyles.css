@@ -31,7 +31,7 @@
 }
 
 /* Centers the tutorial modal window */
-#howDoesItWork-modalInner {
+.center-modal {
   position: absolute;
   left: 0;
   right: 0;
