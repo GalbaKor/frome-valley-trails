@@ -43,6 +43,10 @@
   transform: translateY(-50%);
 }
 
+.video-height {
+  max-height: 80vh;
+}
+
 /* Collectable Stickers - these are toggled on and off by JavaScript */
 .collectableSticker-1 {
   background-image: url(../assets/Picture2.png);
