@@ -4177,6 +4177,10 @@ textarea.form-control.is-invalid {
   flex-grow: 1;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 .scale-150 {
   --tw-scale-x: 1.5;
   --tw-scale-y: 1.5;
@@ -4323,12 +4327,12 @@ textarea.form-control.is-invalid {
   padding: 3rem;
 }
 
-.p-6 {
-  padding: 1.5rem;
-}
-
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .p-0 {
@@ -4575,6 +4579,24 @@ textarea.form-control.is-invalid {
 
   .sm\:flex-col {
     flex-direction: column;
+  }
+
+  .sm\:p-6 {
+    padding: 1.5rem;
+  }
+
+  .sm\:p-4 {
+    padding: 1rem;
+  }
+
+  .sm\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 

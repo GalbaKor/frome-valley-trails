@@ -10,80 +10,74 @@ If the wrong radial button is selected, it is removed from localStorage and the 
 
 stickerLoader then checks to see the status of all the localStorage variables for that route and for each variable that is a 1, it will display the associated sticker as a background image inside the previously blank sticker slot
 
-
-
- key is just used to differentiate the objects - mostly used for the quizChecker as the key number listed here should be used for the button onClick function inside each point file.
-
- id is the id found in the route.html sticker section for each point
-
- background is a link to the picture found in the assets folder
-
- correct is the local storage item. When the correct radial is selected on the corresponding point page, this will be 1
+*key is just used to differentiate the objects - mostly used for the quizChecker as the key number listed here should be used for the button onClick function inside each point file.
+*id is the id found in the route.html sticker section for each point
+*background is a link to the picture found in the assets folder
+*correct is the local storage item. When the correct radial is selected on the corresponding point page, this will be 1
 
 */
 
+const quizPoints = [
+  {
+    key: 0,
+    id: "hambrook-sticker-yShapedTree",
+    background: "url(../../assets/Picture1.png)",
+    correct: "hambrook-yShapedTree-correct",
+  },
+  {
+    key: 1,
+    id: "hambrook-sticker-worrellsOak",
+    background: "url(../../assets/Picture2.png)",
+    correct: "hambrook-worrellsOak-correct",
+  },
+];
+
 stickerLoader = () => {
-  const points = [
-    {
-      key: 0,
-      id: "hambrook-sticker-yShapedTree",
-      background: "url(../../assets/Picture1.png)",
-      correct: "hambrook-yShapedTree-correct",
-    },
-    {
-      key: 1,
-      id: "hambrook-sticker-worrellsOak",
-      background: "url(../../assets/Picture2.png)",
-      correct: "hambrook-worrellsOak-correct",
-    },
-  ];
+  for (let i = 0; i < quizPoints.length; i++) {
+    const point = document.getElementById(quizPoints[i].id);
+    console.log(quizPoints[i]);
 
-  for (let i = 0; i < points.length; i++) {
-    const point = document.getElementById(points[i].id);
-    console.log(points[i]);
-
-    if (localStorage.getItem(points[i].correct) == "1") {
-      point.style.backgroundImage = points[i].background;
+    if (localStorage.getItem(quizPoints[i].correct) == "1") {
+      point.style.backgroundImage = quizPoints[i].background;
     }
   }
 };
 
 quizChecker = (q) => {
-  const quizzes = [
-    {
-      key: 0,
-      answer: "hambrook-yShapedTree-answers-A",
-      correct: "hambrook-yShapedTree-correct",
-      background: "url(../../../assets/Picture1.png)",
-    },
-    {
-      key: 1,
-      answer: "hambrook-worrellsOak-answers-D",
-      correct: "hambrook-worrellsOak-correct",
-      background: "url(../../../assets/Picture2.png)",
-    },
-  ];
-
   const quizCorrectModal = document.getElementById("quiz-correct-modal");
   const quizIncorrectModal = document.getElementById("quiz-incorrect-modal");
   const quizClose = document.getElementsByClassName("quiz-modal-close");
-  const quizCorrectAnswer = document.getElementById(quizzes[q].answer);
+  const quizCorrectAnswer = document.getElementsByClassName("correct");
+  const quizIncorrectAnswer = document.getElementsByClassName("incorrect");
 
   const sticker = document.getElementById("collectableSticker");
 
-  if (quizCorrectAnswer.checked) {
+  // If the correct answer is selected, show correct modal
+  // If any of the incorrect answers are selected, show the incorrect modal
+  // If nothing has been selected, send an alert telling the user to select something before submitting
+  if (quizCorrectAnswer[0].checked) {
     console.log("correct");
-    localStorage.setItem(quizzes[q].correct, 1);
-    console.log(localStorage.getItem(quizzes[q].correct));
-
-    sticker.style.backgroundImage = quizzes[q].background;
+    localStorage.setItem(quizPoints[q].correct, 1);
+    console.log(localStorage.getItem(quizPoints[q].correct));
+    sticker.style.backgroundImage = quizPoints[q].background;
     quizCorrectModal.style.display = "block";
-  } else {
+  } else if (quizIncorrectAnswer[0].checked) {
     console.log("incorrect");
-    localStorage.removeItem(quizzes[q].correct);
-    console.log(localStorage.getItem(quizzes[q].correct));
-
+    localStorage.removeItem(quizPoints[q].correct);
+    console.log(localStorage.getItem(quizPoints[q].correct));
     quizIncorrectModal.style.display = "block";
+  } else if (quizIncorrectAnswer[1].checked) {
+    console.log("incorrect");
+    localStorage.removeItem(quizPoints[q].correct);
+    console.log(localStorage.getItem(quizPoints[q].correct));
+    quizIncorrectModal.style.display = "block";
+  } else if (quizIncorrectAnswer[2].checked) {
+    console.log("incorrect");
+    localStorage.removeItem(quizPoints[q].correct);
+    console.log(localStorage.getItem(quizPoints[q].correct));
+    quizIncorrectModal.style.display = "block";
+  } else {
+    alert("Please select an answer before submitting");
   }
 
   quizClose[0].onclick = function () {
