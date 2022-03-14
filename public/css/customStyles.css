@@ -46,13 +46,3 @@
 .video-height {
   max-height: 80vh;
 }
-
-/* Collectable Stickers - these are toggled on and off by JavaScript */
-.collectableSticker-1 {
-  background-image: url(../assets/Picture2.png);
-  background-size: cover;
-}
-.collectableSticker-2 {
-  background-image: url(../assets/Picture1.png);
-  background-size: cover;
-}

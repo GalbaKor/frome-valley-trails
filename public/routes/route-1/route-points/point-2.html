@@ -191,19 +191,19 @@
               <div
                 class="carousel-item active relative float-left w-full h-full bg-no-repeat bg-contain py-48 p-32 md:p-60 lg:p-80 bg-center"
                 style="
-                  background-image: url('../../../assets/worrels-oak-1.jpg');
+                  background-image: url('../../../assets/route-1/worrels-oak/worrels-oak-1.jpg');
                 "
               ></div>
               <div
                 class="carousel-item relative float-left w-full h-full bg-no-repeat bg-contain py-48 p-32 md:p-60 lg:p-80 bg-center"
                 style="
-                  background-image: url('../../../assets/worrels-oak-2.jpg');
+                  background-image: url('../../../assets/route-1/worrels-oak/worrels-oak-2.jpg');
                 "
               ></div>
               <div
                 class="carousel-item relative float-left w-full h-full bg-no-repeat bg-contain py-48 p-32 md:p-60 lg:p-80 bg-center"
                 style="
-                  background-image: url('../../../assets/worrels-oak-3.jpg');
+                  background-image: url('../../../assets/route-1/worrels-oak/worrels-oak-3.jpg');
                 "
               >
                 <!-- <img
@@ -278,7 +278,9 @@
           </div>
           <div class="p-4">
             <video controls class="m-auto rounded-3xl video-height">
-              <source src="../../../assets/worrels-oak.mp4" />
+              <source
+                src="../../../assets/route-1/worrels-oak/worrels-oak.mp4"
+              />
             </video>
           </div>
         </div>
@@ -344,6 +346,7 @@
 
             <div class="w-full text-center">
               <button
+                onclick="quizChecker(1)"
                 class="p-2 px-4 buttonColour text-white rounded-full drop-shadow-md-custom"
                 id="show-results-button"
               >
@@ -371,7 +374,8 @@
 
             <!-- Sticker -->
             <div
-              class="m-auto h-24 w-24 bg-white rounded-full collectableSticker-2"
+              id="collectableSticker"
+              class="m-auto h-24 w-24 bg-white rounded-full collectableSticker-2 bg-cover"
             ></div>
 
             <p class="text-left pt-4">
@@ -477,52 +481,10 @@
     <!-- TailWind Elements module - allows for easy to use carousel -->
     <script src="../../../js/tw-elements-index.min.js"></script>
 
-    <!-- Custom Quiz Script-->
-    <script>
-      const quizCorrectModal = document.getElementById("quiz-correct-modal");
-      const quizIncorrectModal = document.getElementById(
-        "quiz-incorrect-modal"
-      );
-      const quizButton = document.getElementById("show-results-button");
-      const quizClose = document.getElementsByClassName("quiz-modal-close");
+    <!-- Custom Quiz Script -->
+    <script src="../quiz.js"></script>
 
-      const correct = document.getElementById("hambrook-worrellsOak-answers-D");
-
-      // If the correct option is chosen, the "correct" modal is displayed, otherwise an "incorrect" modal is displayed
-      quizButton.onclick = function () {
-        if (correct.checked) {
-          localStorage.setItem("hambrook-worrellsOak-correct", 1);
-          quizCorrectModal.style.display = "block";
-          console.log("correct");
-          console.log(localStorage.getItem("hambrook-worrellsOak-correct"));
-        } else {
-          localStorage.removeItem("hambrook-worrellsOak-correct");
-          console.log("incorrect");
-          quizIncorrectModal.style.display = "block";
-        }
-      };
-
-      // When the user clicks on the close button, hide the modals
-      quizClose[0].onclick = function () {
-        quizCorrectModal.style.display = "none";
-      };
-      quizClose[1].onclick = function () {
-        quizIncorrectModal.style.display = "none";
-      };
-
-      // When the user clicks anywhere outside of either of the two modals, close them
-      window.onclick = function (event) {
-        if (event.target == quizCorrectModal) {
-          quizCorrectModal.style.display = "none";
-        } else {
-          if (event.target == quizIncorrectModal) {
-            quizIncorrectModal.style.display = "none";
-          }
-        }
-      };
-    </script>
-
-    <!-- Lineicons script -->
+    <!-- Lineicons loading script -->
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
