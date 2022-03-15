@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Y Shaped Tree</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../assets/FromeDigitalTrailsLogo.png"
+    />
+    <!-- CSS links -->
+    <!-- Tailwind CSS - do not edit inside this file as Tailwind will compile and overwite it -->
+    <link rel="stylesheet" href="../../css/styles.css" class="rel" />
+    <!-- Custom CSS - add any custom css inside here -->
+    <link rel="stylesheet" href="../../css/customstyles.css" class="rel" />
+
+    <!-- JavaScript - Alpine JS for inline JS -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Link to svg icons "https://lineicons.com/icons/" -->
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Navigation bar -->
+    <div class="heroFooterColour" x-data="{ hideMob: true }">
+      <nav
+        class="flex items-center justify-between flex-wrap px-2 lg:p-2 m-auto"
+        style="max-width: 1200px"
+      >
+        <a class="flex items-center flex-shrink-0 text-white mr-6" href="/">
+          <img
+            src="../../assets/FromeDigitalTrailsLogo.png"
+            class="h-16 lg:h-20"
+            alt="Winterbourne and Frome Valley Environmental Group Logo"
+          />
+        </a>
+        <!-- hamburger menu -->
+        <div class="block lg:hidden">
+          <button
+            class="flex items-center px-3 py-2 border rounded text-green-100 hover:text-white hover:border-white"
+            @click="hideMob = !hideMob"
+          >
+            <svg
+              class="fill-current h-6 w-6"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="pl-2 lg:pl-0 w-full block lg:flex-grow lg:flex lg:items-center lg:w-auto transition-all duration-500 ease-in-out overflow-hidden lg:max-h-80 max-h-0"
+          :class="{ 'max-h-0': hideMob, 'max-h-80': !hideMob }"
+        >
+          <div class="text-sm lg:flex-grow">
+            <a
+              href="https://winterbourne-environmental.uk/about-us"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              About Us
+            </a>
+            <a
+              href="https://winterbourne-environmental.uk/blog"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              Blog
+            </a>
+            <a
+              href="https://winterbourne-environmental.uk/events_list"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              Events
+            </a>
+            <a
+              href="https://winterbourne-environmental.uk/walks"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              Walks
+            </a>
+            <a
+              href="https://winterbourne-environmental.uk/projects"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              Projects
+            </a>
+            <a
+              href="https://winterbourne-environmental.uk/links"
+              class="block text-base lg:text-lg font-medium mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-75 mr-4"
+            >
+              Links
+            </a>
+          </div>
+          <div class="pb-3 lg:pb-0">
+            <a
+              href="/contact-us"
+              class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-green-500 hover:bg-white mt-4 lg:mt-0"
+              >Contact Us</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Main content begins -->
+
+    <!-- Top Image (overlapped by main content) -->
+    <div
+      class="bg-center bg-no-repeat bg-cover py-24 md:py-36 lg:py-48 banner-image"
+      style="background-image: url(../../assets/Picture1.png)"
+    ></div>
+
+    <!-- Main Content Container ()-->
+    <main
+      role="main"
+      class="container mx-auto flex-grow"
+      style="max-width: 1200px"
+    >
+      <!-- Inner Main Content Container -->
+      <div
+        class="flex flex-wrap mx-auto justify-center bg-white pt-8 -mt-8 md:-mt-16 lg:-mt-24 md:mx-10 rounded-t-3xl"
+      >
+        <!-- Page title "Frome Valley Digital Trails" -->
+        <div class="flex-column w-full">
+          <h1 class="text-xl py-2 text-center lg:text-2xl">Y Shaped Tree</h1>
+          <!-- Pagination -->
+          <h3 class="text-center opacity-80">
+            <a href="../../index.html" class="underline">Routes </a>>
+            <a href="../route-1/route.html" class="underline"
+              >Hambrook Memorial</a
+            >
+          </h3>
+        </div>
+
+        <!-- Carousel -->
+        <div
+          id="carouselExampleCaptions"
+          class="carousel slide relative w-full py-4"
+          data-bs-ride="carousel"
+        >
+          <!-- Bottom button container -->
+          <div
+            class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4"
+          >
+            <!-- Bottom buttons -->
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCaptions"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+
+          <div class="flex flex-row">
+            <!-- Left Button -->
+            <div
+              class="w-2/12 flex items-center justify-center md:justify-end text-center"
+            >
+              <button
+                class="buttonColour text-white rounded-full drop-shadow-md-custom text-xl p-2 items-center"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next"
+              >
+                <i class="lni lni-angle-double-left m-auto"></i>
+              </button>
+            </div>
+
+            <!-- Carousel Images -->
+            <div class="carousel-inner relative w-8/12 overflow-hidden mx-auto">
+              <div
+                class="carousel-item active relative float-left w-full h-full bg-no-repeat bg-contain py-48 p-32 md:p-60 lg:p-80 bg-center"
+                style="
+                  background-image: url('../../assets/route-1/y-shaped-tree/y-shaped-tree-1.png');
+                "
+              ></div>
+              <div
+                class="carousel-item relative float-left w-full h-full bg-no-repeat bg-contain py-48 p-32 md:p-60 lg:p-80 bg-center"
+                style="
+                  background-image: url('../../assets/route-1/y-shaped-tree/y-shaped-tree-2.png');
+                "
+              ></div>
+              <div
+                class="carousel-item relative float-left w-full h-full bg-no-repeat bg-contain py-48 p-32 md:p-60 lg:p-80 bg-center"
+                style="
+                  background-image: url('../../assets/route-1/y-shaped-tree/y-shaped-tree-3.png');
+                "
+              >
+                <!-- <img
+                                    src="../assets/y-shaped-tree-3.png"
+                                    class="block h-full w-full"
+                                    alt="..."
+                                  /> -->
+                <!-- <div
+                                    class="carousel-caption hidden md:block absolute text-center"
+                                  >
+                                    <h5 class="text-xl">Y shaped Tree</h5>
+                                    <p>
+                                      Some representative placeholder content
+                                      for the third slide.
+                                    </p>
+                                  </div> -->
+              </div>
+            </div>
+
+            <!-- Right Button -->
+            <div
+              class="w-2/12 flex items-center justify-center md:justify-start text-center"
+            >
+              <button
+                class="buttonColour text-white rounded-full drop-shadow-md-custom text-xl p-2 items-center"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next"
+              >
+                <i class="lni lni-angle-double-right m-auto"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intro text -->
+        <div class="w-full lg:mx-36 p-4 text-sm rounded-3xl textBgColour m-4">
+          <!-- Trail Information -->
+          <div class="p-4">
+            <p>
+              The Y-Shaped Tree is located on Worrells Lane. This is a ....
+              covered with ivy and is a striking example of a tree left to
+              benefit wildlife rather than be removed. Other exciting
+              information on the Y shaped tree
+              <span style="color: rgb(197, 4, 4)"
+                ><strong>(MORE CONTENT NEEDED)</strong></span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- Quiz -->
+        <div class="w-full lg:mx-36 p-4 text-sm rounded-3xl textBgColour m-4">
+          <div class="w-full md:w-96 m-auto">
+            <h2 class="text-lg text-center">
+              <i
+                class="flex lni lni-question-circle m-auto mx-2 -ml-2 scale-150"
+              ></i>
+              Quiz
+            </h2>
+            <p class="pt-2">
+              Answer the following question correctly to receive a sticker!
+            </p>
+
+            <li class="list-none py-4">
+              <h3 class="underline">What is the Y Shaped Tree covered with?</h3>
+              <div class="flex flex-col">
+                <!-- Question 1 -->
+                <label class="inline-flex items-center mt-3">
+                  <input
+                    type="radio"
+                    name="hambrook-yShapedTree-answers"
+                    id="hambrook-yShapedTree-answers-A"
+                    class="correct w-5 h-5 rounded-full buttonColour hover:cursor-pointer"
+                    value="A"
+                  /><span class="ml-2">1. Ivy</span>
+                </label>
+                <!-- Question 2 -->
+                <label class="inline-flex items-center mt-3">
+                  <input
+                    type="radio"
+                    name="hambrook-yShapedTree-answers"
+                    id="hambrook-yShapedTree-answers-B"
+                    class="incorrect w-5 h-5 rounded-full buttonColour hover:cursor-pointer"
+                    value="B"
+                  /><span class="ml-2">2. Leaves</span>
+                </label>
+                <!-- Question 3 -->
+                <label class="inline-flex items-center mt-3">
+                  <input
+                    type="radio"
+                    name="hambrook-yShapedTree-answers"
+                    id="hambrook-yShapedTree-answers-C"
+                    class="incorrect w-5 h-5 rounded-full buttonColour hover:cursor-pointer"
+                    value="C"
+                  /><span class="ml-2">3. Flowers</span>
+                </label>
+                <!-- Question 4 -->
+                <label class="inline-flex items-center mt-3">
+                  <input
+                    type="radio"
+                    name="hambrook-yShapedTree-answers"
+                    id="hambrook-yShapedTree-answers-D"
+                    class="incorrect w-5 h-5 rounded-full buttonColour hover:cursor-pointer"
+                    value="D"
+                  /><span class="ml-2">4. Bugs</span>
+                </label>
+              </div>
+            </li>
+
+            <div class="w-full text-center">
+              <button
+                onclick="quizChecker(0)"
+                class="p-2 px-4 buttonColour text-white rounded-full drop-shadow-md-custom"
+                id="show-results-button"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz modals (hidden initially) -->
+
+        <!-- Correct Modal -->
+        <!-- container greys out background -->
+        <div
+          id="quiz-correct-modal"
+          class="hidden fixed z-10 pt-14 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50"
+        >
+          <!-- Modal Content Lightbox -->
+          <div
+            id="quiz-modalInner"
+            class="center-modal textBgColour my-auto mx-2 md:mx-auto p-5 md:w-96 rounded-md"
+          >
+            <h1 class="text-2xl text-center">Correct!</h1>
+            <p class="text-left p-4">The Y-Shaped Tree is covered in ivy.</p>
+
+            <!-- Sticker -->
+            <div
+              id="collectableSticker"
+              class="m-auto h-24 w-24 bg-white rounded-full collectableSticker-2 bg-cover"
+            ></div>
+
+            <p class="text-left pt-4">
+              Here is your sticker. Keep going and complete the other points to
+              collect them all!
+            </p>
+
+            <!-- Close button -->
+            <div class="text-center">
+              <button
+                class="cursor-pointer buttonColour p-1 px-4 mt-4 w-8/12 rounded-md text-white drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out quiz-modal-close"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Incorrect Modal -->
+        <!-- container greys out background -->
+        <div
+          id="quiz-incorrect-modal"
+          class="hidden fixed z-10 pt-14 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-50"
+        >
+          <!-- Modal Content Lightbox -->
+          <div
+            id="quiz-modalInner"
+            class="center-modal textBgColour my-auto mx-2 md:mx-auto p-5 md:w-96 rounded-md"
+          >
+            <h1 class="text-2xl text-center">Incorrect!</h1>
+            <p class="text-left p-4">
+              Re-read the information and have a look at the tree to find the
+              answer.
+            </p>
+
+            <!-- Close button -->
+            <div class="text-center">
+              <button
+                class="cursor-pointer buttonColour p-1 px-4 mt-4 w-8/12 rounded-md text-white drop-shadow-md drop-shadow-md-custom hover:scale-110 transition duration-300 ease-in-out quiz-modal-close"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer (social buttons) -->
+    <footer class="heroFooterColour mt-10 text-white p-4">
+      <div class="m-auto" style="max-width: 1200px">
+        <div class="flex flex-wrap justify-center py-4 text-center">
+          <a class="px-2 invert-svg" href="https://twitter.com/weg_uk">
+            <i
+              class="lni lni-twitter text-white w-12 m-auto"
+              style="font-size: 2rem"
+            ></i>
+            <!-- <img
+                alt="Twitter Logo"
+                src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/icons/twitter.svg"
+                class="w-12 fr-fic fr-dii"
+            /> -->
+          </a>
+          <a
+            class="px-2 invert-svg"
+            href="https://www.facebook.com/groups/WinterbourneEnvironment"
+          >
+            <i
+              class="lni lni-facebook text-white w-12 m-auto"
+              style="font-size: 2rem"
+            ></i>
+            <!-- <img
+                alt="Facebook Logo"
+                src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/icons/facebook.svg"
+                class="w-12 fr-fic fr-dii"
+            /> -->
+          </a>
+          <a
+            class="px-2 invert-svg"
+            href="https://www.youtube.com/channel/UCgrzeWRa95dt_M7vhHtRN8At"
+          >
+            <i
+              class="lni lni-youtube text-white w-12 m-auto"
+              style="font-size: 2rem"
+            ></i>
+            <!-- <img
+                alt="Youtube Logo"
+                src="https://winterbourne-environmental.uk/themes/rainlab-vanilla/assets/images/icons/youtube.svg"
+                class="w-12 fr-fic fr-dii"
+            /> -->
+          </a>
+        </div>
+        <div class="text-center text-white opacity-80 text-sm">
+          © Winterbourne and Frome Valley Environmental Group 2022
+          <span class="px-2">|</span>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <span class="px-2">|</span>
+          <a href="/cookies-policy">Cookies Policy</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- TailWind Elements module - allows for easy to use carousel -->
+    <script src="../../js/tw-elements-index.min.js"></script>
+
+    <!-- Custom Quiz Script -->
+    <script src="./quiz.js"></script>
+
+    <!-- Lineicons loading script -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule=""
+      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

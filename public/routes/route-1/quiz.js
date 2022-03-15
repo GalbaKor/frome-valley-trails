@@ -17,6 +17,7 @@ stickerLoader then checks to see the status of all the localStorage variables fo
 
 */
 
+// this is where new point information is added
 const quizPoints = [
   {
     key: 0,
@@ -30,7 +31,69 @@ const quizPoints = [
     background: "url(../../assets/Picture2.png)",
     correct: "hambrook-worrellsOak-correct",
   },
+  {
+    key: 2,
+    id: "hambrook-sticker-allSaints",
+    background: "url(../../assets/Picture1.png)",
+    correct: "hambrook-allSaints-correct",
+  },
+  {
+    key: 3,
+    id: "hambrook-sticker-hollowTree",
+    background: "url(../../assets/Picture2.png)",
+    correct: "hambrook-hollowTree-correct",
+  },
+  {
+    key: 4,
+    id: "hambrook-sticker-treeRoots",
+    background: "url(../../assets/Picture1.png)",
+    correct: "hambrook-treeRoots-correct",
+  },
+  {
+    key: 5,
+    id: "hambrook-sticker-churchyard",
+    background: "url(../../assets/Picture2.png)",
+    correct: "hambrook-churchyard-correct",
+  },
+  {
+    key: 6,
+    id: "hambrook-sticker-birdWatching",
+    background: "url(../../assets/Picture1.png)",
+    correct: "hambrook-birdWatching-correct",
+  },
+  {
+    key: 7,
+    id: "hambrook-sticker-wcrp",
+    background: "url(../../assets/Picture2.png)",
+    correct: "hambrook-wcrp-correct",
+  },
+  {
+    key: 8,
+    id: "hambrook-sticker-worrellsLane",
+    background: "url(../../assets/Picture1.png)",
+    correct: "hambrook-worrellsLane-correct",
+  },
+  {
+    key: 9,
+    id: "hambrook-sticker-smallCommon",
+    background: "url(../../assets/Picture2.png)",
+    correct: "hambrook-smallCommon-correct",
+  },
+  {
+    key: 10,
+    id: "hambrook-sticker-hambrookMemorial",
+    background: "url(../../assets/Picture1.png)",
+    correct: "hambrook-hambrookMemorial-correct",
+  },
+  {
+    key: 11,
+    id: "hambrook-sticker-crossHands",
+    background: "url(../../assets/Picture2.png)",
+    correct: "hambrook-crossHands-correct",
+  },
 ];
+
+// Everything after here can be ignored and shouldn't need editing.
 
 stickerLoader = () => {
   for (let i = 0; i < quizPoints.length; i++) {
